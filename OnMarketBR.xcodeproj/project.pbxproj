@@ -15,6 +15,8 @@
 		438DCA751ED86F7C0038BB4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438DCA731ED86F7C0038BB4E /* LaunchScreen.storyboard */; };
 		438DCA801ED86F7C0038BB4E /* OnMarketBRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA7F1ED86F7C0038BB4E /* OnMarketBRTests.swift */; };
 		438DCA8B1ED86F7C0038BB4E /* OnMarketBRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA8A1ED86F7C0038BB4E /* OnMarketBRUITests.swift */; };
+		43930B3D1ED8759900CAA8A8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43930B3C1ED8759900CAA8A8 /* .gitignore */; };
+		CC3A825BAC3CD384C81B20AB /* Pods_OnMarketBR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B07AE89C4B065266923F55A /* Pods_OnMarketBR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		438DCA861ED86F7C0038BB4E /* OnMarketBRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnMarketBRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		438DCA8A1ED86F7C0038BB4E /* OnMarketBRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnMarketBRUITests.swift; sourceTree = "<group>"; };
 		438DCA8C1ED86F7C0038BB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43930B3C1ED8759900CAA8A8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6B07AE89C4B065266923F55A /* Pods_OnMarketBR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnMarketBR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BEB37FDC8F60A0DFD3C20CC /* Pods-OnMarketBR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnMarketBR.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnMarketBR/Pods-OnMarketBR.release.xcconfig"; sourceTree = "<group>"; };
+		F706F0DD55813C48CBDAFFFE /* Pods-OnMarketBR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnMarketBR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnMarketBR/Pods-OnMarketBR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC3A825BAC3CD384C81B20AB /* Pods_OnMarketBR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +83,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C47DE1D64CAA71F4597707C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F706F0DD55813C48CBDAFFFE /* Pods-OnMarketBR.debug.xcconfig */,
+				8BEB37FDC8F60A0DFD3C20CC /* Pods-OnMarketBR.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		438DCA5B1ED86F7B0038BB4E = {
 			isa = PBXGroup;
 			children = (
+				43930B3C1ED8759900CAA8A8 /* .gitignore */,
 				438DCA661ED86F7B0038BB4E /* OnMarketBR */,
 				438DCA7E1ED86F7C0038BB4E /* OnMarketBRTests */,
 				438DCA891ED86F7C0038BB4E /* OnMarketBRUITests */,
 				438DCA651ED86F7B0038BB4E /* Products */,
+				2C47DE1D64CAA71F4597707C /* Pods */,
+				7FE0EF783431BD79F57FE8D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +147,14 @@
 			path = OnMarketBRUITests;
 			sourceTree = "<group>";
 		};
+		7FE0EF783431BD79F57FE8D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B07AE89C4B065266923F55A /* Pods_OnMarketBR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 438DCA8F1ED86F7C0038BB4E /* Build configuration list for PBXNativeTarget "OnMarketBR" */;
 			buildPhases = (
+				0F0FADBB650AFC0D6B127B70 /* [CP] Check Pods Manifest.lock */,
 				438DCA601ED86F7B0038BB4E /* Sources */,
 				438DCA611ED86F7B0038BB4E /* Frameworks */,
 				438DCA621ED86F7B0038BB4E /* Resources */,
+				C705643B5617AA7D90ED73F2 /* [CP] Embed Pods Frameworks */,
+				68FCC75EB1CA5836F2D6543F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43930B3D1ED8759900CAA8A8 /* .gitignore in Resources */,
 				438DCA751ED86F7C0038BB4E /* LaunchScreen.storyboard in Resources */,
 				438DCA721ED86F7C0038BB4E /* Assets.xcassets in Resources */,
 				438DCA6D1ED86F7B0038BB4E /* Main.storyboard in Resources */,
@@ -259,6 +290,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F0FADBB650AFC0D6B127B70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		68FCC75EB1CA5836F2D6543F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnMarketBR/Pods-OnMarketBR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C705643B5617AA7D90ED73F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnMarketBR/Pods-OnMarketBR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		438DCA601ED86F7B0038BB4E /* Sources */ = {
@@ -417,10 +496,12 @@
 		};
 		438DCA901ED86F7C0038BB4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F706F0DD55813C48CBDAFFFE /* Pods-OnMarketBR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 92F4M7VW6Y;
 				INFOPLIST_FILE = OnMarketBR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmarket.OnMarketBR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,10 +511,12 @@
 		};
 		438DCA911ED86F7C0038BB4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BEB37FDC8F60A0DFD3C20CC /* Pods-OnMarketBR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 92F4M7VW6Y;
 				INFOPLIST_FILE = OnMarketBR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmarket.OnMarketBR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +601,7 @@
 				438DCA911ED86F7C0038BB4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		438DCA921ED86F7C0038BB4E /* Build configuration list for PBXNativeTarget "OnMarketBRTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +610,7 @@
 				438DCA941ED86F7C0038BB4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		438DCA951ED86F7C0038BB4E /* Build configuration list for PBXNativeTarget "OnMarketBRUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +619,7 @@
 				438DCA971ED86F7C0038BB4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
