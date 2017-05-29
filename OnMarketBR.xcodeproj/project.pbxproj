@@ -15,6 +15,7 @@
 		438DCA8B1ED86F7C0038BB4E /* OnMarketBRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA8A1ED86F7C0038BB4E /* OnMarketBRUITests.swift */; };
 		43930B3D1ED8759900CAA8A8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43930B3C1ED8759900CAA8A8 /* .gitignore */; };
 		43930B3F1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */; };
+		43930B411ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43930B401ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift */; };
 		CC3A825BAC3CD384C81B20AB /* Pods_OnMarketBR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B07AE89C4B065266923F55A /* Pods_OnMarketBR.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		438DCA8C1ED86F7C0038BB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43930B3C1ED8759900CAA8A8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriasCollectionViewController.swift; sourceTree = "<group>"; };
+		43930B401ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriaCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B07AE89C4B065266923F55A /* Pods_OnMarketBR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnMarketBR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEB37FDC8F60A0DFD3C20CC /* Pods-OnMarketBR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnMarketBR.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnMarketBR/Pods-OnMarketBR.release.xcconfig"; sourceTree = "<group>"; };
 		F706F0DD55813C48CBDAFFFE /* Pods-OnMarketBR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnMarketBR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnMarketBR/Pods-OnMarketBR.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				438DCA761ED86F7C0038BB4E /* Info.plist */,
 				438DCA6E1ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld */,
 				43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */,
+				43930B401ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift */,
 			);
 			path = OnMarketBR;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			files = (
 				438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */,
 				438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */,
+				43930B411ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift in Sources */,
 				43930B3F1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

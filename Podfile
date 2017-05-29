@@ -7,4 +7,5 @@ target 'OnMarketBR' do
     pod 'SVProgressHUD'
     pod 'SwiftyJSON'
     pod 'Alamofire', '~> 4.4'
+    pod 'SideMenu'
 end
