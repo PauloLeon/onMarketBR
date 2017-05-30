@@ -11,6 +11,7 @@ import SideMenu
 
 
 private let reuseIdentifier = "Cell"
+private var quantidadeMockup = 0
 
 class SubCategoriaCollectionViewController: UICollectionViewController {
     fileprivate let itemsPerRow: CGFloat = 2
@@ -42,10 +43,29 @@ class SubCategoriaCollectionViewController: UICollectionViewController {
         cell.produtoDesc.text = "Original Pote 200g"
         cell.precoProduto.text = "R$ 4,61"
         cell.lblEconomia.text = "R$ 0,06"
-        
+        //if for mockup
+        if(indexPath.row == 0){
+            cell.produtoQuantidade.text = "\(quantidadeMockup)"
+            cell.plusButton.addTarget(self, action: #selector(addingProduct(button:)), for:.touchUpInside)
+            cell.minusButton.addTarget(self, action: #selector(removeProduct(button:)), for:.touchUpInside)
+        }else{
+            cell.produtoQuantidade.text = "0"
+        }
         roundCells(cell: cell)
 
         return cell
+    }
+    
+    func addingProduct(button: UIButton){
+        quantidadeMockup = quantidadeMockup + 1
+        self.collectionView?.reloadData()
+    }
+    
+    func removeProduct(button: UIButton){
+        if( quantidadeMockup > 0){
+            quantidadeMockup = quantidadeMockup - 1
+            self.collectionView?.reloadData()
+        }
     }
     
     func roundCells(cell: UICollectionViewCell) {
@@ -64,10 +84,8 @@ class SubCategoriaCollectionViewController: UICollectionViewController {
     
     fileprivate func setupSideMenu() {
         SideMenuManager.menuRightNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenuNavigationController") as? UISideMenuNavigationController
-        
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

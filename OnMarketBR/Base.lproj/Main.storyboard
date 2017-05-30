@@ -16,9 +16,10 @@
         <scene sceneID="lr9-3D-rXG">
             <objects>
                 <navigationController storyboardIdentifier="RightMenuNavigationController" id="GhP-vS-kYF" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vi3-QI-C3M">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vi3-QI-C3M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.77174515257673748" green="0.20157042731520355" blue="0.40433272539269183" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
@@ -31,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="-212" y="763"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Carrrinho de Compras-->
         <scene sceneID="D6I-Cs-t0Q">
             <objects>
-                <tableViewController id="BOS-65-f1i" sceneMemberID="viewController">
+                <tableViewController id="BOS-65-f1i" customClass="RightTableViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="z5l-uk-Aep">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +55,9 @@
                             <outlet property="delegate" destination="BOS-65-f1i" id="SXI-LF-S5P"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Zmn-Tk-cxx"/>
+                    <navigationItem key="navigationItem" title="Carrrinho de Compras" id="6rV-lW-Q2p">
+                        <barButtonItem key="rightBarButtonItem" image="ic_car_done" id="kWT-Om-nuN"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJJ-0r-dGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,10 +318,13 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="lblEconomia" destination="8Y6-GA-kxu" id="98y-Hp-nVt"/>
+                                    <outlet property="minusButton" destination="BpA-5T-RUP" id="kze-8n-5ND"/>
+                                    <outlet property="plusButton" destination="k1D-pC-fCz" id="2qy-UM-5Ys"/>
                                     <outlet property="precoProduto" destination="DYd-En-Gzu" id="HUd-nS-Db6"/>
                                     <outlet property="produtoDesc" destination="4oi-GY-dx0" id="Ml0-Re-1KT"/>
                                     <outlet property="produtoImage" destination="qhW-CN-rYg" id="6vo-Qp-cs7"/>
                                     <outlet property="produtoName" destination="Otk-PB-bpy" id="Rev-qs-agJ"/>
+                                    <outlet property="produtoQuantidade" destination="6qf-Yv-hhU" id="Ppd-2G-k4D"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -546,6 +552,7 @@
     <resources>
         <image name="backsidemenu" width="2048" height="1080"/>
         <image name="ic_alimentos" width="432" height="433"/>
+        <image name="ic_car_done" width="25" height="25"/>
         <image name="ic_carrinho_de_compras" width="25" height="25"/>
         <image name="ic_compartilhar" width="115" height="161"/>
         <image name="ic_compras" width="142" height="124"/>
@@ -558,6 +565,6 @@
         <image name="veio" width="492" height="492"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cjx-yR-Ye4"/>
+        <segue reference="ImH-QN-eMf"/>
     </inferredMetricsTieBreakers>
 </document>
