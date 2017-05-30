@@ -11,4 +11,5 @@ import UIKit
 class CategoriaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageCentral: UIImageView!
     @IBOutlet weak var lblCategorias: UILabel!
+    @IBOutlet weak var buttonSegue: UIButton!
 }
