@@ -18,6 +18,8 @@
 		43930B411ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43930B401ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift */; };
 		43CD9EDC1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD9EDB1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift */; };
 		43CD9EE01EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD9EDF1EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift */; };
+		43CD9EE21EDDF36400ECF914 /* LeftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD9EE11EDDF36400ECF914 /* LeftTableViewController.swift */; };
+		43CD9EE41EDE03CE00ECF914 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CD9EE31EDE03CE00ECF914 /* Launch Screen.storyboard */; };
 		CC3A825BAC3CD384C81B20AB /* Pods_OnMarketBR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B07AE89C4B065266923F55A /* Pods_OnMarketBR.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		43930B401ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriaCollectionViewCell.swift; sourceTree = "<group>"; };
 		43CD9EDB1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProdutosCollectionViewCell.swift; path = ../ProdutosCollectionViewCell.swift; sourceTree = "<group>"; };
 		43CD9EDF1EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubCategoriaCollectionViewController.swift; path = ../SubCategoriaCollectionViewController.swift; sourceTree = "<group>"; };
+		43CD9EE11EDDF36400ECF914 /* LeftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTableViewController.swift; sourceTree = "<group>"; };
+		43CD9EE31EDE03CE00ECF914 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		6B07AE89C4B065266923F55A /* Pods_OnMarketBR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnMarketBR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEB37FDC8F60A0DFD3C20CC /* Pods-OnMarketBR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnMarketBR.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnMarketBR/Pods-OnMarketBR.release.xcconfig"; sourceTree = "<group>"; };
 		F706F0DD55813C48CBDAFFFE /* Pods-OnMarketBR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnMarketBR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnMarketBR/Pods-OnMarketBR.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,10 +127,12 @@
 			isa = PBXGroup;
 			children = (
 				438DCA6B1ED86F7B0038BB4E /* Main.storyboard */,
+				43CD9EE31EDE03CE00ECF914 /* Launch Screen.storyboard */,
 				43CD9EDF1EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift */,
 				43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */,
 				43930B401ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift */,
 				43CD9EDB1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift */,
+				43CD9EE11EDDF36400ECF914 /* LeftTableViewController.swift */,
 				43CD9EDA1EDDACE700ECF914 /* Support Files */,
 			);
 			path = OnMarketBR;
@@ -284,6 +290,7 @@
 			files = (
 				43930B3D1ED8759900CAA8A8 /* .gitignore in Resources */,
 				438DCA721ED86F7C0038BB4E /* Assets.xcassets in Resources */,
+				43CD9EE41EDE03CE00ECF914 /* Launch Screen.storyboard in Resources */,
 				438DCA6D1ED86F7B0038BB4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43CD9EDC1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift in Sources */,
+				43CD9EE21EDDF36400ECF914 /* LeftTableViewController.swift in Sources */,
 				438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */,
 				438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */,
 				43CD9EE01EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift in Sources */,

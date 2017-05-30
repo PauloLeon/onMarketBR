@@ -12,8 +12,11 @@ import SideMenu
 private let reuseIdentifier = "Cell"
 
 class CategoriasCollectionViewController: UICollectionViewController {
+    
     fileprivate let itemsPerRow: CGFloat = 3
+    
     let itens:Array = ["ic_alimentos","ic_bebidas","ic_beleza","ic_descartaveis","ic_higiene","ic_infantil","ic_lavanderia","ic_limpeza","ic_mercearia_doce","ic_oferta","ic_petshop","ic_utilitarios"]
+    
     let itensLbl:Array = ["Alimentos","Bebidas","Beleza","Descartáveis","Higiene","Infantil","Lavanderia","Limpeza","Mercearia","Oferta","Petshop","Utilitarios"]
 
     override func viewDidLoad() {
@@ -32,7 +35,9 @@ class CategoriasCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoriaCollectionViewCell
+        
         cell.backgroundColor = UIColor.init(colorLiteralRed: 0.07, green: 0.47, blue: 0.81, alpha: 1.00)
         let imageName = itens[indexPath.row]
         let lblCategorias = itensLbl[indexPath.row]
