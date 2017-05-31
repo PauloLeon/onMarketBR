@@ -14,6 +14,7 @@ private let reuseIdentifier = "Cell"
 class CategoriasCollectionViewController: UICollectionViewController {
     
     fileprivate let itemsPerRow: CGFloat = 3
+   
     
     let itens:Array = ["ic_alimentos","ic_bebidas","ic_beleza","ic_descartaveis","ic_higiene","ic_infantil","ic_lavanderia","ic_limpeza","ic_mercearia_doce","ic_oferta","ic_petshop","ic_utilitarios"]
     
@@ -78,6 +79,8 @@ class CategoriasCollectionViewController: UICollectionViewController {
         // Note that these continue to work on the Navigation Controller independent of the View Controller it displays!
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        
+        SideMenuManager.menuWidth = max(round(min((self.view.frame.width), (self.view.frame.height)) * 0.85), 240)
         
     }
     
