@@ -54,7 +54,7 @@ class RightCollectionViewController: UICollectionViewController {
         cell.produtoName.text = "Achocolatado Toddy"
         cell.produtoDesc.text = "Pote 200g"
         cell.produtoPreco.text = "Unidade - R$ 4,61"
-        cell.produtoQuantidade.text = "100"
+        cell.produtoQuantidade.text = "10"
         cell.precoFinal.text = "R$ 4,61"
 
         roundCells(cell: cell)
