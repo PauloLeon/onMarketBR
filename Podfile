@@ -9,4 +9,5 @@ target 'OnMarketBR' do
     pod 'Alamofire', '~> 4.4'
     pod 'SideMenu'
     pod 'BubbleTransition', '~> 2.0.0'
+    pod 'IQKeyboardManagerSwift'
 end
