@@ -10,6 +10,7 @@
 		4364B6E71EDF035A00C3EEF6 /* RightCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B6E61EDF035A00C3EEF6 /* RightCollectionViewController.swift */; };
 		4364B6E91EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B6E81EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift */; };
 		4364B6EB1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B6EA1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift */; };
+		437912EA1EE5A7420019B82E /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437912E91EE5A7410019B82E /* CitiesTableViewController.swift */; };
 		438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA671ED86F7B0038BB4E /* AppDelegate.swift */; };
 		438DCA6D1ED86F7B0038BB4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438DCA6B1ED86F7B0038BB4E /* Main.storyboard */; };
 		438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA6E1ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 		4364B6E61EDF035A00C3EEF6 /* RightCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightCollectionViewController.swift; sourceTree = "<group>"; };
 		4364B6E81EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarrinhoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4364B6EA1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCarrinhoCollectionViewCell.swift; sourceTree = "<group>"; };
+		437912E91EE5A7410019B82E /* CitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		438DCA641ED86F7B0038BB4E /* OnMarketBR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnMarketBR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		438DCA671ED86F7B0038BB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		438DCA6C1ED86F7B0038BB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				438DCA6B1ED86F7B0038BB4E /* Main.storyboard */,
+				437912E91EE5A7410019B82E /* CitiesTableViewController.swift */,
 				43FE4E691EE1CF2700D13D0E /* ProdutoDetailViewController.swift */,
 				43CD9EDF1EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift */,
 				43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */,
@@ -406,6 +409,7 @@
 				43CD9EDC1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift in Sources */,
 				43CD9EE21EDDF36400ECF914 /* LeftTableViewController.swift in Sources */,
 				438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */,
+				437912EA1EE5A7420019B82E /* CitiesTableViewController.swift in Sources */,
 				438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */,
 				43CD9EE01EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift in Sources */,
 				4364B6EB1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift in Sources */,
