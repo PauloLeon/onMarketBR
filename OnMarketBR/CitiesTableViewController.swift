@@ -11,12 +11,9 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class CitiesTableViewController: UITableViewController {
-
     
     let resultsViewController = UITableViewController()
-    
     var searchController: UISearchController!
-    
     var locais = ["Belém, Batista Campos","Belém, Cremação","Belém, Marco","Belém, Doca"]
 
     override func viewDidLoad() {
@@ -39,9 +36,7 @@ class CitiesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        
         cell.textLabel?.text = locais[indexPath.row]
         return cell
     }
 }
-

@@ -10,7 +10,14 @@
 		4364B6E71EDF035A00C3EEF6 /* RightCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B6E61EDF035A00C3EEF6 /* RightCollectionViewController.swift */; };
 		4364B6E91EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B6E81EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift */; };
 		4364B6EB1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364B6EA1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift */; };
+		436C5B081EE86DCB001FF067 /* BaseApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5B071EE86DCB001FF067 /* BaseApiClient.swift */; };
+		436C5B0A1EE871E2001FF067 /* TaxonomiesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5B091EE871E2001FF067 /* TaxonomiesApiClient.swift */; };
+		436C5B0C1EE87244001FF067 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5B0B1EE87244001FF067 /* ApiError.swift */; };
+		436C5B0F1EE8742B001FF067 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5B0E1EE8742B001FF067 /* String+Extensions.swift */; };
 		437912EA1EE5A7420019B82E /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437912E91EE5A7410019B82E /* CitiesTableViewController.swift */; };
+		437912EF1EE72ED90019B82E /* Taxonomies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437912EE1EE72ED90019B82E /* Taxonomies.swift */; };
+		437912F11EE7303B0019B82E /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437912F01EE7303B0019B82E /* Root.swift */; };
+		437912F31EE730F60019B82E /* Taxons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437912F21EE730F60019B82E /* Taxons.swift */; };
 		438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA671ED86F7B0038BB4E /* AppDelegate.swift */; };
 		438DCA6D1ED86F7B0038BB4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438DCA6B1ED86F7B0038BB4E /* Main.storyboard */; };
 		438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA6E1ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld */; };
@@ -50,7 +57,14 @@
 		4364B6E61EDF035A00C3EEF6 /* RightCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightCollectionViewController.swift; sourceTree = "<group>"; };
 		4364B6E81EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarrinhoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4364B6EA1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCarrinhoCollectionViewCell.swift; sourceTree = "<group>"; };
+		436C5B071EE86DCB001FF067 /* BaseApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseApiClient.swift; sourceTree = "<group>"; };
+		436C5B091EE871E2001FF067 /* TaxonomiesApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxonomiesApiClient.swift; sourceTree = "<group>"; };
+		436C5B0B1EE87244001FF067 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		436C5B0E1EE8742B001FF067 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		437912E91EE5A7410019B82E /* CitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
+		437912EE1EE72ED90019B82E /* Taxonomies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taxonomies.swift; sourceTree = "<group>"; };
+		437912F01EE7303B0019B82E /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		437912F21EE730F60019B82E /* Taxons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taxons.swift; sourceTree = "<group>"; };
 		438DCA641ED86F7B0038BB4E /* OnMarketBR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnMarketBR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		438DCA671ED86F7B0038BB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		438DCA6C1ED86F7B0038BB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +126,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		436C5B061EE86D82001FF067 /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				436C5B071EE86DCB001FF067 /* BaseApiClient.swift */,
+				436C5B091EE871E2001FF067 /* TaxonomiesApiClient.swift */,
+			);
+			name = ApiClient;
+			sourceTree = "<group>";
+		};
+		436C5B0D1EE87402001FF067 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				436C5B0E1EE8742B001FF067 /* String+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		437912ED1EE72CAF0019B82E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				436C5B0B1EE87244001FF067 /* ApiError.swift */,
+				437912EE1EE72ED90019B82E /* Taxonomies.swift */,
+				437912F01EE7303B0019B82E /* Root.swift */,
+				437912F21EE730F60019B82E /* Taxons.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		438DCA5B1ED86F7B0038BB4E = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +185,11 @@
 				43FE4E691EE1CF2700D13D0E /* ProdutoDetailViewController.swift */,
 				43CD9EDF1EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift */,
 				43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */,
+				436C5B0D1EE87402001FF067 /* Extensions */,
+				436C5B061EE86D82001FF067 /* ApiClient */,
+				437912ED1EE72CAF0019B82E /* Model */,
 				43FE4E6F1EE1EAF100D13D0E /* Login */,
-				43CD9EE81EDE16A700ECF914 /* Models */,
+				43CD9EE81EDE16A700ECF914 /* Cells */,
 				43CD9EE71EDE168C00ECF914 /* SideMenus */,
 				43CD9EDA1EDDACE700ECF914 /* Support Files */,
 			);
@@ -189,7 +234,7 @@
 			name = SideMenus;
 			sourceTree = "<group>";
 		};
-		43CD9EE81EDE16A700ECF914 /* Models */ = {
+		43CD9EE81EDE16A700ECF914 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				4364B6E81EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift */,
@@ -197,7 +242,7 @@
 				43CD9EDB1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift */,
 				4364B6EA1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift */,
 			);
-			name = Models;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		43FE4E6F1EE1EAF100D13D0E /* Login */ = {
@@ -406,6 +451,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43FE4E6C1EE1DDF000D13D0E /* LoginViewController.swift in Sources */,
+				436C5B0F1EE8742B001FF067 /* String+Extensions.swift in Sources */,
+				437912EF1EE72ED90019B82E /* Taxonomies.swift in Sources */,
 				43CD9EDC1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift in Sources */,
 				43CD9EE21EDDF36400ECF914 /* LeftTableViewController.swift in Sources */,
 				438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */,
@@ -413,12 +460,17 @@
 				438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */,
 				43CD9EE01EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift in Sources */,
 				4364B6EB1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift in Sources */,
+				437912F11EE7303B0019B82E /* Root.swift in Sources */,
 				4364B6E91EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift in Sources */,
 				43930B411ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift in Sources */,
 				43FE4E6A1EE1CF2700D13D0E /* ProdutoDetailViewController.swift in Sources */,
+				436C5B0C1EE87244001FF067 /* ApiError.swift in Sources */,
 				43FE4E6E1EE1E66A00D13D0E /* RegisterViewController.swift in Sources */,
 				43930B3F1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift in Sources */,
 				4364B6E71EDF035A00C3EEF6 /* RightCollectionViewController.swift in Sources */,
+				436C5B0A1EE871E2001FF067 /* TaxonomiesApiClient.swift in Sources */,
+				436C5B081EE86DCB001FF067 /* BaseApiClient.swift in Sources */,
+				437912F31EE730F60019B82E /* Taxons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
