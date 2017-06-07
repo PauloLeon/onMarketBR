@@ -13,7 +13,7 @@ class Taxons: NSObject {
     var id: Int!
     var name: String!
     var permalink: String!
-    var position: Int!
+    var pretty_name: String!
     var parent_id: Int!
     var taxonomy_id: Int!
     
@@ -21,7 +21,7 @@ class Taxons: NSObject {
         self.id = json["id"].intValue
         self.name = json["name"].stringValue
         self.permalink = json["permalink"].stringValue
-        self.position = json["position"].intValue
+        self.pretty_name = json["position"].stringValue
         self.parent_id = json["parent_id"].intValue
         self.taxonomy_id = json["taxonomy_id"].intValue
     }

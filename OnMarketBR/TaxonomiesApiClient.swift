@@ -19,9 +19,9 @@ class TaxonomiesApiClient: BaseApiClient {
                 switch response.result {
                 case .success:
                     let json = JSON(data: response.data!)
-                    
                     var taxonomies = [Taxonomies]()
-                    for cardJSON in json.arrayValue {
+                    let tax = json["taxonomies"]
+                    for cardJSON in tax.arrayValue {
                         let card = Taxonomies(fromJSON: cardJSON)
                         taxonomies.append(card)
                     }

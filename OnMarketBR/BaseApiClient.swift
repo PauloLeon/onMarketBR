@@ -18,9 +18,9 @@ class BaseApiClient {
 extension BaseApiClient {
     enum Router: URLRequestConvertible {
         
-        static let domainName  = "http://shop-spree.herokuapp.com"
+        static let domainName  = "http://dev.onmarketbr.com.br/"
         
-        static let apiPathName = "api/ams"
+        static let apiPathName = "api/v1"
         
         static let baseURLString = "\(domainName)/\(apiPathName)"
         
@@ -38,7 +38,7 @@ extension BaseApiClient {
         // MARK: - Paths
         var path: String {
             switch self {
-                case .home:  return "/home"
+                case .home:  return "/taxonomies"
                 default: return ""
             }
         }
@@ -46,6 +46,14 @@ extension BaseApiClient {
         // MARK: - Parameters
         var parameters: URLRequestParams? {
             var params: URLRequestParams?
+            
+            let token = "6ce6956bb25541def91e19d5b745bfd826a0153d0034e7ea"
+            
+            if params == nil {
+                params = ["token" : token]
+            } else {
+                params!["token"] = token
+            }
             return params
         }
         

@@ -182,9 +182,9 @@
 			children = (
 				438DCA6B1ED86F7B0038BB4E /* Main.storyboard */,
 				437912E91EE5A7410019B82E /* CitiesTableViewController.swift */,
-				43FE4E691EE1CF2700D13D0E /* ProdutoDetailViewController.swift */,
-				43CD9EDF1EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift */,
 				43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */,
+				43CD9EDF1EDDAECF00ECF914 /* SubCategoriaCollectionViewController.swift */,
+				43FE4E691EE1CF2700D13D0E /* ProdutoDetailViewController.swift */,
 				436C5B0D1EE87402001FF067 /* Extensions */,
 				436C5B061EE86D82001FF067 /* ApiClient */,
 				437912ED1EE72CAF0019B82E /* Model */,
