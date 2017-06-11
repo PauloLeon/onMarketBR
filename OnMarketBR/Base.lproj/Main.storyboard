@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MnB-o5-fbg">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MnB-o5-fbg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -36,7 +36,7 @@
         <scene sceneID="K0N-Qz-HQ7">
             <objects>
                 <collectionViewController id="PcR-bO-Swr" customClass="RightCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="OFA-af-A0s">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OFA-af-A0s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -302,6 +302,15 @@
                                     <segue destination="9jk-bS-UiI" kind="presentation" id="sXe-hp-5ph"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg4-8g-CGj">
+                                <rect key="frame" x="310" y="40" width="30" height="15"/>
+                                <state key="normal" image="seta_baixo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="8AE-cc-uO2" eventType="touchUpInside" id="wxY-qE-7Yq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -309,6 +318,7 @@
                             <constraint firstItem="OMJ-P0-3eA" firstAttribute="top" secondItem="pZZ-cu-beH" secondAttribute="bottom" constant="12" id="11m-Ms-IjZ"/>
                             <constraint firstItem="3Ub-iz-fpU" firstAttribute="centerX" secondItem="dCF-vE-wy4" secondAttribute="centerX" id="4I6-Ml-pHQ"/>
                             <constraint firstItem="pZZ-cu-beH" firstAttribute="leading" secondItem="IlN-ZB-h6k" secondAttribute="trailing" constant="43" id="4Pl-gB-JPX"/>
+                            <constraint firstItem="Tg4-8g-CGj" firstAttribute="leading" secondItem="3Ub-iz-fpU" secondAttribute="trailing" constant="93" id="5IZ-yg-uf9"/>
                             <constraint firstItem="3Ub-iz-fpU" firstAttribute="top" secondItem="3RB-AC-fRB" secondAttribute="bottom" constant="34" id="5Yp-Xh-EU8"/>
                             <constraint firstItem="ClO-Po-cqu" firstAttribute="leading" secondItem="dCF-vE-wy4" secondAttribute="leadingMargin" constant="27" id="6Ik-B7-n6n"/>
                             <constraint firstItem="ztz-nv-KIc" firstAttribute="trailing" secondItem="le3-hG-1ay" secondAttribute="trailing" id="7fE-BU-HI0"/>
@@ -318,6 +328,7 @@
                             <constraint firstItem="IlN-ZB-h6k" firstAttribute="leading" secondItem="OMJ-P0-3eA" secondAttribute="leading" id="AVj-bl-WfC"/>
                             <constraint firstItem="OMJ-P0-3eA" firstAttribute="top" secondItem="IlN-ZB-h6k" secondAttribute="bottom" constant="7" id="EQq-6w-tFD"/>
                             <constraint firstItem="le3-hG-1ay" firstAttribute="top" secondItem="ztz-nv-KIc" secondAttribute="bottom" constant="17" id="Hxl-YM-Qqg"/>
+                            <constraint firstItem="Tg4-8g-CGj" firstAttribute="top" secondItem="3RB-AC-fRB" secondAttribute="bottom" constant="20" id="KLS-ZX-e0W"/>
                             <constraint firstItem="IlN-ZB-h6k" firstAttribute="top" secondItem="3EE-2Z-SD6" secondAttribute="bottom" constant="22" id="KQQ-Ha-4BS"/>
                             <constraint firstItem="ztz-nv-KIc" firstAttribute="top" secondItem="dCF-vE-wy4" secondAttribute="top" constant="319" id="Kor-8x-t4R"/>
                             <constraint firstItem="3EE-2Z-SD6" firstAttribute="top" secondItem="ClO-Po-cqu" secondAttribute="bottom" constant="4" id="KrA-9W-wGu"/>
@@ -329,13 +340,16 @@
                             <constraint firstItem="OMJ-P0-3eA" firstAttribute="trailing" secondItem="ztz-nv-KIc" secondAttribute="trailing" id="VVZ-KD-Xlf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uFX-hj-flx" secondAttribute="trailing" id="ZG2-pH-jsW"/>
                             <constraint firstItem="ClO-Po-cqu" firstAttribute="trailing" secondItem="3EE-2Z-SD6" secondAttribute="trailing" id="Zwy-vF-SUZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tg4-8g-CGj" secondAttribute="trailing" constant="19" id="bfG-Vx-Tvt"/>
                             <constraint firstItem="ztz-nv-KIc" firstAttribute="leading" secondItem="le3-hG-1ay" secondAttribute="leading" id="f9m-JM-MDI"/>
+                            <constraint firstItem="ClO-Po-cqu" firstAttribute="top" secondItem="Tg4-8g-CGj" secondAttribute="bottom" constant="126" id="imE-n9-pkl"/>
                             <constraint firstItem="ClO-Po-cqu" firstAttribute="top" secondItem="3Ub-iz-fpU" secondAttribute="bottom" constant="68" id="j9C-E2-Cws"/>
                             <constraint firstItem="3EE-2Z-SD6" firstAttribute="trailing" secondItem="pZZ-cu-beH" secondAttribute="trailing" id="u51-Kd-gMw"/>
                             <constraint firstItem="CNu-1T-uSb" firstAttribute="top" secondItem="uFX-hj-flx" secondAttribute="bottom" constant="8" symbolic="YES" id="yTg-7l-KPs"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="close" destination="Tg4-8g-CGj" id="qQM-iE-pq2"/>
                         <outlet property="email" destination="ClO-Po-cqu" id="ku3-vQ-nNT"/>
                         <outlet property="mostrarSenha" destination="pZZ-cu-beH" id="oIy-rm-2t9"/>
                         <outlet property="senha" destination="IlN-ZB-h6k" id="zEW-Ry-UeZ"/>
@@ -345,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCA-Lx-4eC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241" y="755"/>
+            <point key="canvasLocation" x="1240.8" y="754.27286356821594"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JkC-BD-9dr">
@@ -377,7 +391,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SSh-OD-kK2" id="pln-Mg-HfZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -419,7 +433,7 @@
         <scene sceneID="wfU-XL-dKQ">
             <objects>
                 <collectionViewController id="FRt-w4-xCZ" customClass="CategoriasCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6uI-FZ-KOt">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6uI-FZ-KOt">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -504,7 +518,7 @@
         <scene sceneID="cka-ii-LIY">
             <objects>
                 <collectionViewController id="Bb8-RM-61a" customClass="SubCategoriaCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Aio-3g-DHH">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Aio-3g-DHH">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1351,6 +1365,7 @@
         <image name="ic_pesquisar_precos" width="151" height="151"/>
         <image name="ic_ultimas_compras" width="150" height="136"/>
         <image name="invisible" width="160" height="145"/>
+        <image name="seta_baixo" width="150" height="83"/>
         <image name="toddy" width="1111" height="1111"/>
     </resources>
     <inferredMetricsTieBreakers>

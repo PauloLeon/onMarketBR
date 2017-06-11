@@ -11,6 +11,7 @@ import BubbleTransition
 
 class LoginViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
+    @IBOutlet weak var close: UIButton!
     @IBOutlet weak var senha: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var mostrarSenha: UIButton!
@@ -27,6 +28,9 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     
     @IBAction func signIn(_ sender: Any) {
         
+    }
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func roundButtons(button: UIButton) {
