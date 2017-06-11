@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MnB-o5-fbg">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MnB-o5-fbg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -36,7 +36,7 @@
         <scene sceneID="K0N-Qz-HQ7">
             <objects>
                 <collectionViewController id="PcR-bO-Swr" customClass="RightCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="OFA-af-A0s">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OFA-af-A0s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -377,7 +377,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SSh-OD-kK2" id="pln-Mg-HfZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -419,7 +419,7 @@
         <scene sceneID="wfU-XL-dKQ">
             <objects>
                 <collectionViewController id="FRt-w4-xCZ" customClass="CategoriasCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6uI-FZ-KOt">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6uI-FZ-KOt">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -437,12 +437,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWm-Pe-jKW">
-                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
-                                            <connections>
-                                                <segue destination="Bb8-RM-61a" kind="show" id="BXQ-lg-VVN"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alimentos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwH-z8-I1J">
                                             <rect key="frame" x="8" y="86" width="94" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -457,22 +451,18 @@
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.47058823529411764" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6Yf-KE-J44" firstAttribute="top" secondItem="hxB-BI-UlO" secondAttribute="topMargin" constant="24" id="6N6-tk-Zbe"/>
-                                    <constraint firstItem="FWm-Pe-jKW" firstAttribute="top" secondItem="hxB-BI-UlO" secondAttribute="top" id="Dd7-Il-3oH"/>
                                     <constraint firstItem="6Yf-KE-J44" firstAttribute="leading" secondItem="hxB-BI-UlO" secondAttribute="leadingMargin" constant="24" id="IJc-VE-6Jo"/>
                                     <constraint firstItem="CwH-z8-I1J" firstAttribute="centerX" secondItem="6Yf-KE-J44" secondAttribute="centerX" id="SvE-2r-xaP"/>
-                                    <constraint firstItem="FWm-Pe-jKW" firstAttribute="centerX" secondItem="6Yf-KE-J44" secondAttribute="centerX" id="aMO-Cr-s51"/>
-                                    <constraint firstItem="FWm-Pe-jKW" firstAttribute="leading" secondItem="hxB-BI-UlO" secondAttribute="leading" id="adn-nh-6hz"/>
                                     <constraint firstItem="CwH-z8-I1J" firstAttribute="bottom" secondItem="hxB-BI-UlO" secondAttribute="bottomMargin" id="c3B-pw-ZsX"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="6Yf-KE-J44" secondAttribute="bottom" constant="23" id="fcT-0f-oWA"/>
                                     <constraint firstItem="CwH-z8-I1J" firstAttribute="leading" secondItem="hxB-BI-UlO" secondAttribute="leadingMargin" id="i8E-2T-0uR"/>
-                                    <constraint firstItem="FWm-Pe-jKW" firstAttribute="centerY" secondItem="6Yf-KE-J44" secondAttribute="centerY" id="iLo-fn-xsP"/>
                                     <constraint firstItem="CwH-z8-I1J" firstAttribute="top" secondItem="6Yf-KE-J44" secondAttribute="bottom" constant="7" id="nTR-X8-nNC"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="6Yf-KE-J44" secondAttribute="trailing" constant="23" id="zDa-8M-Bck"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="buttonSegue" destination="FWm-Pe-jKW" id="dpX-7a-W1M"/>
                                     <outlet property="imageCentral" destination="6Yf-KE-J44" id="Qyp-9I-vQm"/>
                                     <outlet property="lblCategorias" destination="CwH-z8-I1J" id="H0n-Lw-btK"/>
+                                    <segue destination="Bb8-RM-61a" kind="show" identifier="segueToSubCategoria" id="bkz-dY-zXc"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -504,7 +494,7 @@
         <scene sceneID="cka-ii-LIY">
             <objects>
                 <collectionViewController id="Bb8-RM-61a" customClass="SubCategoriaCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Aio-3g-DHH">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Aio-3g-DHH">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1354,6 +1344,6 @@
         <image name="toddy" width="1111" height="1111"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ha1-YU-7lV"/>
+        <segue reference="cjx-yR-Ye4"/>
     </inferredMetricsTieBreakers>
 </document>

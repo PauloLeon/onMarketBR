@@ -14,10 +14,18 @@ private let reuseIdentifier = "Cell"
 private var quantidadeMockup = 0
 
 class SubCategoriaCollectionViewController: UICollectionViewController {
+    
     fileprivate let itemsPerRow: CGFloat = 2
+    var subCategorias: Root?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let sub = subCategorias {
+            for taxons in (sub.taxons){
+                print(taxons.name)
+            }
+        }
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
     }
