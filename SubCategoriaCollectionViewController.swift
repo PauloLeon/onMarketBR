@@ -9,7 +9,6 @@
 import UIKit
 import SideMenu
 
-
 private let reuseIdentifier = "Cell"
 private var quantidadeMockup = 0
 
@@ -17,7 +16,6 @@ class SubCategoriaCollectionViewController: UICollectionViewController {
     
     fileprivate let itemsPerRow: CGFloat = 2
     var subCategorias: Root?
-
 
     override func viewDidLoad() {
         super.viewDidLoad()

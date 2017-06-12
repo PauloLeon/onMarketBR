@@ -27,6 +27,9 @@ extension BaseApiClient {
         // MARK: - Routes
         case home
         
+        case orders
+        case cart
+        
         // MARK: - Methods
         var method: HTTPMethod {
             switch self {
@@ -39,6 +42,9 @@ extension BaseApiClient {
         var path: String {
             switch self {
                 case .home:  return "/taxonomies"
+                case .orders: return "/orders"
+                case .cart: return "/orders/current"
+
                 default: return ""
             }
         }
@@ -47,7 +53,7 @@ extension BaseApiClient {
         var parameters: URLRequestParams? {
             var params: URLRequestParams?
             
-            let token = "6ce6956bb25541def91e19d5b745bfd826a0153d0034e7ea"
+            let token = "2b278662dd5776d0cc0df50f6c9303af30140c3db365889f"
             
             if params == nil {
                 params = ["token" : token]

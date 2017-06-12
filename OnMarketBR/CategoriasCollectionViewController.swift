@@ -15,10 +15,7 @@ private let reuseIdentifier = "Cell"
 class CategoriasCollectionViewController: UICollectionViewController {
     
     var isLoading = true
-
     var taxonomies = [Taxonomies]()
-    
-
     fileprivate let itemsPerRow: CGFloat = 3
     
     let itens:Array = ["ic_alimentos","ic_bebidas","ic_beleza","ic_descartaveis","ic_higiene","ic_infantil","ic_lavanderia","ic_limpeza","ic_mercearia_doce","ic_oferta","ic_petshop","ic_utilitarios"]
@@ -129,5 +126,7 @@ class CategoriasCollectionViewController: UICollectionViewController {
             subCategoriaCV.subCategorias = self.taxonomies[(indexPaths?.row)!].root
         }
     }
+    
+ 
 
 }
