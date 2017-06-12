@@ -20,12 +20,14 @@ class LineItem: NSObject, NSCoding {
     var display_total: String?
     var imageURL: String?
     var in_stock: Bool?
-    
+    var variant_id: Int?
+
     init(fromJSON json: JSON) {
         self.id = json["id"].intValue
         self.single_display_amount = json["single_display_amount"].stringValue
         self.in_stock = json["in_stock"].boolValue
         self.name = json["variant"]["name"].stringValue
+        self.variant_id = json["variant_id"].intValue
         self.desc = json["variant"]["description"].stringValue
         self.quantity = json["quantity"].intValue
         self.price = json["price"].stringValue

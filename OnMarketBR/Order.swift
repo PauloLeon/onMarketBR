@@ -15,7 +15,7 @@ class Order: NSObject, NSCoding {
         case payment
         case complete
     }
-    var id: Int!
+    var id: String!
     var number: String!
     var user_id: Int!
     var state: State = .cart
@@ -52,7 +52,7 @@ class Order: NSObject, NSCoding {
     }
     
     init(fromJSON json: JSON) {
-        self.id = json["id"].intValue
+        self.id = json["id"].stringValue
         self.number = json["number"].stringValue
         self.user_id = json["user_id"].intValue
         self.created_at = json["created_at"].stringValue
@@ -93,7 +93,7 @@ class Order: NSObject, NSCoding {
     
     // Mark :- NSCoding
     required init?(coder aDecoder: NSCoder) {
-        id = aDecoder.decodeObject(forKey: "id") as? Int
+        id = aDecoder.decodeObject(forKey: "id") as? String
         completed_at = aDecoder.decodeObject(forKey: "completed_at") as? String
         total = aDecoder.decodeObject(forKey: "total") as? Float
         lineItems = aDecoder.decodeObject(forKey: "lineItems") as! [LineItem]
@@ -137,7 +137,7 @@ class Order: NSObject, NSCoding {
     }
     
     static var hasCurrentOrder: Bool {
-        return currentOrder != nil && currentOrder!.id != nil
+        return currentOrder != nil && currentOrder!.id != ""
     }
     
     var isEmpty: Bool {

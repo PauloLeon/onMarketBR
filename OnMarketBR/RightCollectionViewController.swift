@@ -9,10 +9,8 @@
 import UIKit
 import SVProgressHUD
 
-
 private let reuseIdentifier = "Cell"
 private let totalReuseIdentifier = "TotalCell"
-
 
 class RightCollectionViewController: UICollectionViewController {
     fileprivate let itemsPerRow: CGFloat = 1
@@ -27,7 +25,6 @@ class RightCollectionViewController: UICollectionViewController {
         fetchOrders()
     }
     
-    //for back button in navigation, don't mess with the UX
     override func viewWillDisappear(_ animated: Bool) {
         if SVProgressHUD.isVisible() {
             SVProgressHUD.dismiss()
@@ -74,6 +71,7 @@ class RightCollectionViewController: UICollectionViewController {
                 cell.produtoName.text = order.lineItems[indexPath.row].name
                 cell.produtoDesc.text = order.lineItems[indexPath.row].desc
                 cell.produtoPreco.text = order.lineItems[indexPath.row].single_display_amount
+                
                 if let quantidade = order.lineItems[indexPath.row].quantity{
                     cell.produtoQuantidade.text = String(describing: quantidade)
                     print(String(describing: quantidade))
@@ -81,6 +79,11 @@ class RightCollectionViewController: UICollectionViewController {
                 if let total = order.lineItems[indexPath.row].total{
                     cell.precoFinal.text = "R$\(String(describing: total))"
                 }
+                cell.plusButton.addTarget(self, action: #selector(addingProduct(button:)), for:.touchUpInside)
+                cell.plusButton.tag = indexPath.row
+                cell.minusButton.addTarget(self, action: #selector(removeProduct(button:)), for:.touchUpInside)
+                cell.minusButton.tag = indexPath.row
+
             }
             roundCells(cell: cell)
             return cell
@@ -100,6 +103,60 @@ class RightCollectionViewController: UICollectionViewController {
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+    }
+    
+    func addingProduct(button: UIButton){
+        if let current = self.currentOrder {
+            if let id = current.number {
+                let idForVariant = current.lineItems[button.tag].id
+                let quantidade = current.lineItems[button.tag].quantity
+            
+                var data = URLRequestParams()
+                data["line_item[quantity]"] = quantidade!+1
+                SVProgressHUD.show()
+                CartApiClient.updateLineItem(id, lineItemID: idForVariant!, data: data, success: {
+                    order in
+                    Order.currentOrder = order
+                    self.fetchOrders()
+                }, failure: { apiError in
+                    self.showApiErrorAlert(apiError)
+                })
+
+            }
+        }
+        
+    }
+    
+    func removeProduct(button: UIButton){
+        if let current = self.currentOrder {
+            if let id = current.number {
+                let idForVariant = current.lineItems[button.tag].id
+                let quantidade = current.lineItems[button.tag].quantity
+                if (quantidade!-1) > 0 {
+                    var data = URLRequestParams()
+                    data["line_item[quantity]"] = quantidade!-1
+                    SVProgressHUD.show()
+                    CartApiClient.updateLineItem(id, lineItemID: idForVariant!, data: data, success: {
+                        order in
+                        self.fetchOrders()
+                    }, failure: { apiError in
+                        self.showApiErrorAlert(apiError)
+                    })
+                }else{
+                    var data = URLRequestParams()
+                    data["line_item[quantity]"] = quantidade!-1
+                    SVProgressHUD.show()
+                    CartApiClient.removeLineItem(id, lineItemID: idForVariant!, success: {
+                        order in
+                        self.fetchOrders()
+                    }, failure: { apiError in
+                        self.showApiErrorAlert(apiError)
+                    })
+                }
+                
+            }
+        }
+
     }
     
     func fetchOrders(){
@@ -123,5 +180,4 @@ class RightCollectionViewController: UICollectionViewController {
         ac.addAction(ok)
         present(ac, animated: true, completion: nil)
     }
-
 }

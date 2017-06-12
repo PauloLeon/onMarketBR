@@ -28,11 +28,24 @@ extension BaseApiClient {
         case home
         
         case orders
+        case updateOrder(id: String, data: URLRequestParams)
+        
         case cart
+        case addItem(order_id: String, data: URLRequestParams)
+        case updateItem(order_id: String, item_id: Int, data: URLRequestParams)
+        case removeItem(order_id: String, item_id: Int)
+
+
         
         // MARK: - Methods
         var method: HTTPMethod {
             switch self {
+                case .addItem:
+                    return .post
+                case .removeItem:
+                    return .delete
+                case .updateItem:
+                    return .patch
                 default:
                     return .get
                 }
@@ -44,7 +57,10 @@ extension BaseApiClient {
                 case .home:  return "/taxonomies"
                 case .orders: return "/orders"
                 case .cart: return "/orders/current"
-
+                case .updateOrder(let id, _):                                   return "/orders/\(id)"
+                case .addItem(let order_id, _):                                 return "/orders/\(order_id)/line_items"
+                case .updateItem(let order_id, let item_id, _):                 return "/orders/\(order_id)/line_items/\(item_id)"
+                case .removeItem(let order_id, let item_id):                    return "/orders/\(order_id)/line_items/\(item_id)"
                 default: return ""
             }
         }
@@ -52,6 +68,13 @@ extension BaseApiClient {
         // MARK: - Parameters
         var parameters: URLRequestParams? {
             var params: URLRequestParams?
+            
+            switch self {
+                case .updateOrder(_, let data):             params = data
+                case .addItem(_, let data):                 params = data
+                case .updateItem(_, _, let data):           params = data
+                default:                                    params = nil
+            }
             
             let token = "2b278662dd5776d0cc0df50f6c9303af30140c3db365889f"
             
