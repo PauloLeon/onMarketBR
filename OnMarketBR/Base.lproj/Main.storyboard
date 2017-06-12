@@ -226,13 +226,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_onmarket" translatesAutoresizingMaskIntoConstraints="NO" id="3Ub-iz-fpU">
-                                <rect key="frame" x="158" y="54" width="59" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="MKB-EG-S4l"/>
-                                    <constraint firstAttribute="width" constant="59" id="rQ0-wc-Ws1"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EE-2Z-SD6">
                                 <rect key="frame" x="43" y="215" width="290" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -311,6 +304,13 @@
                                     <action selector="close:" destination="8AE-cc-uO2" eventType="touchUpInside" id="wxY-qE-7Yq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ub-iz-fpU">
+                                <rect key="frame" x="158" y="54" width="59" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="MKB-EG-S4l"/>
+                                    <constraint firstAttribute="width" constant="59" id="rQ0-wc-Ws1"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -359,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCA-Lx-4eC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240.8" y="754.27286356821594"/>
+            <point key="canvasLocation" x="1241" y="754"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JkC-BD-9dr">
@@ -1359,7 +1359,6 @@
         <image name="ic_compartilhar" width="115" height="161"/>
         <image name="ic_compras" width="142" height="124"/>
         <image name="ic_ler_nota_fiscal" width="131" height="154"/>
-        <image name="ic_login_onmarket" width="521" height="494"/>
         <image name="ic_menu" width="25" height="25"/>
         <image name="ic_nas_proximidades" width="151" height="151"/>
         <image name="ic_pesquisar_precos" width="151" height="151"/>

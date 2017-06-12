@@ -25,6 +25,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func close(_ sender: Any) {
+        view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
     

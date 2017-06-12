@@ -15,6 +15,7 @@ class CitiesTableViewController: UITableViewController {
     let resultsViewController = UITableViewController()
     var searchController: UISearchController!
     var locais = ["Belém, Batista Campos","Belém, Cremação","Belém, Marco","Belém, Doca"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,4 +40,5 @@ class CitiesTableViewController: UITableViewController {
         cell.textLabel?.text = locais[indexPath.row]
         return cell
     }
+    
 }
