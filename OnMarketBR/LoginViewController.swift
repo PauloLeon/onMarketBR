@@ -8,9 +8,11 @@
 
 import UIKit
 import BubbleTransition
+import Lottie
 
 class LoginViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
+    @IBOutlet weak var close: UIButton!
     @IBOutlet weak var senha: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var mostrarSenha: UIButton!
@@ -23,11 +25,26 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         super.viewDidLoad()
         roundButtons(button: signInButton)
         roundButtons(button: signUpButton)
+        
+        let animationView = LOTAnimationView(name: "PinJump")
+        animationView?.frame = CGRect(x: 90, y: 10, width: 200, height: 200)
+        animationView?.contentMode = .scaleAspectFill
+        animationView?.loopAnimation = true
+        
+        self.view.addSubview(animationView!)
+        
+        animationView?.play()
     }
     
     @IBAction func signIn(_ sender: Any) {
-        
+        view.endEditing(true)
     }
+    @IBAction func close(_ sender: Any) {
+        view.endEditing(true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     func roundButtons(button: UIButton) {
         button.layer.cornerRadius = 20.0
@@ -35,6 +52,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         button.layer.borderColor = UIColor.clear.cgColor
         button.layer.masksToBounds = true
     }
+    
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination

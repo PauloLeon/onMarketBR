@@ -10,4 +10,5 @@ target 'OnMarketBR' do
     pod 'SideMenu'
     pod 'BubbleTransition', '~> 2.0.0'
     pod 'IQKeyboardManagerSwift'
+    pod 'lottie-ios'
 end
