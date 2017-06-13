@@ -402,7 +402,7 @@
         <scene sceneID="tYd-YS-gRn">
             <objects>
                 <navigationController id="MnB-o5-fbg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pab-Yj-b8c">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pab-Yj-b8c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.16078431372549018" green="0.58431372549019611" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
