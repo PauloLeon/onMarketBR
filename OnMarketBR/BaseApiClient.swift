@@ -61,7 +61,6 @@ extension BaseApiClient {
                 case .addItem(let order_id, _):                                 return "/orders/\(order_id)/line_items"
                 case .updateItem(let order_id, let item_id, _):                 return "/orders/\(order_id)/line_items/\(item_id)"
                 case .removeItem(let order_id, let item_id):                    return "/orders/\(order_id)/line_items/\(item_id)"
-                default: return ""
             }
         }
         
