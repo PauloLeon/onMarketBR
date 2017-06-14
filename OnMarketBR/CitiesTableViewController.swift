@@ -10,18 +10,44 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CitiesTableViewController: UITableViewController {
+class CitiesTableViewController: UITableViewController{
     
     let resultsViewController = UITableViewController()
-    var searchController: UISearchController!
-    var locais = ["Belém, Batista Campos","Belém, Cremação","Belém, Marco","Belém, Doca"]
+    let searchController = UISearchController(searchResultsController: nil)
+    //var searchController: UISearchController!
+    
+    var locais = [Cities]()
+    var filteredCandies = [Cities]()
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchController = UISearchController(searchResultsController: self.resultsViewController)
+        //searchController = UISearchController(searchResultsController: self.resultsViewController)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        locais = [
+            Cities(name:"Belém, Batista Campos"),
+            Cities(name:"Belém, Cremação"),
+            Cities(name:"Belém, Marco"),
+            Cities(name:"Belém, Reduto")]
+            
+        
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        
         tableView.tableHeaderView = searchController.searchBar
+        //tableView.tableHeaderView = searchController.searchBar
+    }
+    func filterContentForSearchText(searchText: String) {
+        filteredCandies = locais.filter { cidade in
+        return  cidade.name.lowercased().contains(searchText.lowercased())
+        }
+        
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,15 +56,38 @@ class CitiesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" {
-            return locais.count
+            return filteredCandies.count
         }
         return locais.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = locais[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cidade: Cities
+        if searchController.isActive && searchController.searchBar.text != "" {
+            cidade = filteredCandies[indexPath.row]
+        } else {
+            cidade = locais[indexPath.row]
+        }
+        cell.textLabel?.text = cidade.name
         return cell
     }
     
+    
+    
+}
+extension CitiesTableViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        //filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+
+extension CitiesTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        _ = searchController.searchBar
+        //let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
 }
