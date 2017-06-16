@@ -29,18 +29,21 @@ extension BaseApiClient {
         
         case orders
         case updateOrder(id: String, data: URLRequestParams)
-        
+        case createOrder(data: URLRequestParams)
+
         case cart
         case addItem(order_id: String, data: URLRequestParams)
         case updateItem(order_id: String, item_id: Int, data: URLRequestParams)
         case removeItem(order_id: String, item_id: Int)
+        
+        case products(data: URLRequestParams)
 
 
         
         // MARK: - Methods
         var method: HTTPMethod {
             switch self {
-                case .addItem:
+                case .addItem, .createOrder:
                     return .post
                 case .removeItem:
                     return .delete
@@ -61,6 +64,9 @@ extension BaseApiClient {
                 case .addItem(let order_id, _):                                 return "/orders/\(order_id)/line_items"
                 case .updateItem(let order_id, let item_id, _):                 return "/orders/\(order_id)/line_items/\(item_id)"
                 case .removeItem(let order_id, let item_id):                    return "/orders/\(order_id)/line_items/\(item_id)"
+                case .products(_):                                              return "/products"
+                case .createOrder(_):                                           return "/orders/"
+
             }
         }
         
@@ -72,6 +78,8 @@ extension BaseApiClient {
                 case .updateOrder(_, let data):             params = data
                 case .addItem(_, let data):                 params = data
                 case .updateItem(_, _, let data):           params = data
+                case .products(let data):                   params = data
+                case .createOrder(let data):                params = data
                 default:                                    params = nil
             }
             

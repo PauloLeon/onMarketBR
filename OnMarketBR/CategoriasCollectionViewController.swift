@@ -120,13 +120,10 @@ class CategoriasCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "segueToSubCategoria" {
-            let subCategoriaCV = segue.destination as! SubCategoriaCollectionViewController
+            let subCategoriaCV = segue.destination as! SubCategoriaTableViewController
             let cell = sender as! CategoriaCollectionViewCell
             let indexPaths = self.collectionView?.indexPath(for: cell)
             subCategoriaCV.subCategorias = self.taxonomies[(indexPaths?.row)!].root
         }
     }
-    
- 
-
 }

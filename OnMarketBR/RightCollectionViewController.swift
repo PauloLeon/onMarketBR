@@ -153,10 +153,8 @@ class RightCollectionViewController: UICollectionViewController {
                         self.showApiErrorAlert(apiError)
                     })
                 }
-                
             }
         }
-
     }
     
     func fetchOrders(){

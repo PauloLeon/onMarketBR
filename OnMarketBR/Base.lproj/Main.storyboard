@@ -36,7 +36,7 @@
         <scene sceneID="K0N-Qz-HQ7">
             <objects>
                 <collectionViewController id="PcR-bO-Swr" customClass="RightCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OFA-af-A0s">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="OFA-af-A0s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -429,11 +429,11 @@
             </objects>
             <point key="canvasLocation" x="-3385" y="24"/>
         </scene>
-        <!--OnMarketBR-->
+        <!--Início-->
         <scene sceneID="wfU-XL-dKQ">
             <objects>
                 <collectionViewController id="FRt-w4-xCZ" customClass="CategoriasCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6uI-FZ-KOt">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6uI-FZ-KOt">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -476,7 +476,7 @@
                                 <connections>
                                     <outlet property="imageCentral" destination="6Yf-KE-J44" id="Qyp-9I-vQm"/>
                                     <outlet property="lblCategorias" destination="CwH-z8-I1J" id="H0n-Lw-btK"/>
-                                    <segue destination="Bb8-RM-61a" kind="show" identifier="segueToSubCategoria" id="bkz-dY-zXc"/>
+                                    <segue destination="I5V-W2-5GS" kind="show" identifier="segueToSubCategoria" id="C7y-17-bAF"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -485,7 +485,7 @@
                             <outlet property="delegate" destination="FRt-w4-xCZ" id="AM4-hT-BgA"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="OnMarketBR" id="fPS-7Y-Aft">
+                    <navigationItem key="navigationItem" title="Início" id="fPS-7Y-Aft">
                         <barButtonItem key="leftBarButtonItem" image="ic_menu" id="jIO-Ei-lgY">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -507,8 +507,8 @@
         <!--Alimentos-->
         <scene sceneID="cka-ii-LIY">
             <objects>
-                <collectionViewController id="Bb8-RM-61a" customClass="SubCategoriaCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Aio-3g-DHH">
+                <collectionViewController id="Bb8-RM-61a" customClass="ProdutosCollectionViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Aio-3g-DHH">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -690,7 +690,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzi-cM-9CF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="23.838080959520241"/>
+            <point key="canvasLocation" x="502" y="24"/>
         </scene>
         <!--Achocolatado-->
         <scene sceneID="3n3-To-gcc">
@@ -832,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlG-ck-V0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="24"/>
+            <point key="canvasLocation" x="1215" y="24"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Upt-R2-f6e">
@@ -947,7 +947,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fd6-uP-GCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="24"/>
+            <point key="canvasLocation" x="1894" y="24"/>
+        </scene>
+        <!--Escolha de SubCategorias-->
+        <scene sceneID="CDz-bu-dBE">
+            <objects>
+                <tableViewController id="I5V-W2-5GS" customClass="SubCategoriaTableViewController" customModule="OnMarketBR" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Jf-1a-To2">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Gvd-TX-k4u" rowHeight="74" style="IBUITableViewCellStyleDefault" id="aUL-CD-g8G">
+                                <rect key="frame" x="0.0" y="28" width="375" height="74"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aUL-CD-g8G" id="E3Y-LN-dDA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gvd-TX-k4u">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="73.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Bb8-RM-61a" kind="show" identifier="segueToProdutos" id="VE4-3m-F1i"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I5V-W2-5GS" id="PON-1b-MQ0"/>
+                            <outlet property="delegate" destination="I5V-W2-5GS" id="W0D-xw-46n"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Escolha de SubCategorias" id="zzi-xK-RpM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CIZ-Bg-RLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="23.838080959520241"/>
         </scene>
         <!--Left Table View Controller-->
         <scene sceneID="7nW-5Z-9fr">
@@ -1449,6 +1490,6 @@
         <image name="toddy" width="1111" height="1111"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cjx-yR-Ye4"/>
+        <segue reference="ImH-QN-eMf"/>
     </inferredMetricsTieBreakers>
 </document>
