@@ -9,6 +9,10 @@
 
 import Foundation
 
+struct Cities {
+    let name : String
+}
+
 extension String {
     
     var titleize: String {
