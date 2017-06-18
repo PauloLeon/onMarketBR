@@ -211,4 +211,13 @@ class ProdutosCollectionViewController: UICollectionViewController {
         ac.addAction(ok)
         present(ac, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "segueToDetail" {
+            let detailCV = segue.destination as! ProdutoDetailViewController
+            let cell = sender as! ProdutosCollectionViewCell
+            let indexPaths = self.collectionView?.indexPath(for: cell)
+            detailCV.product = self.products[(indexPaths?.row)!]
+        }
+    }
 }
