@@ -38,6 +38,20 @@ class LineItem: NSObject, NSCoding {
         }
     }
     
+    func updateItem(fromLineItem lineUpdate: LineItem){
+        self.id = lineUpdate.id
+        self.single_display_amount = lineUpdate.single_display_amount
+        self.in_stock = lineUpdate.in_stock
+        self.name = lineUpdate.name
+        self.variant_id = lineUpdate.variant_id
+        self.desc = lineUpdate.desc
+        self.quantity = lineUpdate.quantity
+        self.price = lineUpdate.price
+        self.total = lineUpdate.total
+        self.display_total = lineUpdate.display_total
+        self.imageURL = lineUpdate.imageURL
+    }
+    
     // Mark :- NSCoding
     required init?(coder aDecoder: NSCoder) {
         id = aDecoder.decodeObject(forKey: "id") as? Int

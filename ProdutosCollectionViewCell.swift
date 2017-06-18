@@ -17,4 +17,6 @@ class ProdutosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var produtoQuantidade: UILabel!
+    @IBOutlet weak var addCart: UIButton!
+
 }

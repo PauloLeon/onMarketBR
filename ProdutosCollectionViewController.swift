@@ -57,7 +57,6 @@ class ProdutosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProdutosCollectionViewCell
         if(isLoading){
-            
         }else{
             cell.backgroundColor = UIColor.white
             let imageName = "toddy"
@@ -68,11 +67,8 @@ class ProdutosCollectionViewController: UICollectionViewController {
             cell.produtoDesc.text = "Original Pote 200g"
             cell.precoProduto.text = self.products[indexPath.row].display_price
             cell.lblEconomia.text = "not today"
-            cell.plusButton.addTarget(self, action: #selector(addingProduct(button:)), for:.touchUpInside)
-            cell.plusButton.tag = indexPath.row
-            cell.minusButton.addTarget(self, action: #selector(removeProduct(button:)), for:.touchUpInside)
-            cell.minusButton.tag = indexPath.row
-            cell.produtoQuantidade.text = "0"
+            cell.addCart.addTarget(self, action: #selector(addingProduct(button:)), for:.touchUpInside)
+            cell.addCart.tag = indexPath.row
             roundCells(cell: cell)
             return cell
         }
@@ -81,6 +77,7 @@ class ProdutosCollectionViewController: UICollectionViewController {
     }
     
     func addingProduct(button: UIButton){
+        SVProgressHUD.show()
         if !Order.hasCurrentOrder {
             OrderApiClient.createOrder({ order in
                 Order.currentOrder = order
@@ -89,29 +86,33 @@ class ProdutosCollectionViewController: UICollectionViewController {
                 self.showApiErrorAlert(apiError)
             })
         } else {
-            addProductToCart(button: button)
+            let idForVariant = fetchProductInCart(button: button)
+            if(idForVariant != -1){
+                addProductToCart(button: button, idForVariant: idForVariant)
+            }else{
+                createProductInCart(button: button)
+            }
         }
     }
     
-    func removeProduct(button: UIButton){
-        if( quantidadeMockup > 0){
-            quantidadeMockup = quantidadeMockup - 1
-            self.collectionView?.reloadData()
-        }
-    }
-    
-    func addProductToCart(button: UIButton){
+    func addProductToCart(button: UIButton, idForVariant: Int){
         if let current = Order.currentOrder {
-            if let id = current.number {
-                let idForVariant = current.lineItems[button.tag].id
-                let quantidade = current.lineItems[button.tag].quantity
+            if let idForRequest = current.number {
+                var quantidade: Int?
+                for item in current.lineItems{
+                    if(item.variant_id == self.products[button.tag].id){
+                        quantidade = item.quantity!
+                    }
+                }
                 var data = URLRequestParams()
                 data["line_item[quantity]"] = quantidade!+1
-                CartApiClient.updateLineItem(id, lineItemID: idForVariant!, data: data, success: {
+                CartApiClient.updateLineItem(idForRequest, lineItemID: idForVariant, data: data, success: {
                     order in
-                    Order.currentOrder = order
+                    SVProgressHUD.dismiss()
+                    self.showSuccessAlert()
                 }, failure: { apiError in
                     self.showApiErrorAlert(apiError)
+                    SVProgressHUD.dismiss()
                 })
             }
         }
@@ -125,18 +126,32 @@ class ProdutosCollectionViewController: UICollectionViewController {
                 data["line_item[quantity]"] = 1
                 CartApiClient.addLineItem(id, data: data, success: {
                     order in
-                    Order.currentOrder = order
+                    SVProgressHUD.dismiss()
+                    self.showSuccessAlert()
                 }, failure: { apiError in
                     self.showApiErrorAlert(apiError)
+                    SVProgressHUD.dismiss()
                 })
             }
         }
     }
-
     
+    func fetchProductInCart(button: UIButton) -> Int{
+        if let current = Order.currentOrder {
+            if (!current.lineItems.isEmpty){
+                for item in current.lineItems {
+                    if(item.variant_id == self.products[button.tag].id){
+                        return item.id!
+                    }
+                }
+            }
+        }
+        return -1
+    }
+
     func fetchCurrentOrder(){
         OrderApiClient.current({ currentOrder in
-            self.currentOrder = currentOrder
+            Order.currentOrder = currentOrder
             print("getOrderOK")
         }, failure: { apiError in
             self.showApiErrorAlert(apiError)
@@ -184,6 +199,10 @@ class ProdutosCollectionViewController: UICollectionViewController {
     
     func showApiErrorAlert(_ apiError: ApiError) {
         showAlert("Whooops!!!", message: apiError.errorMessage(), handler: nil)
+    }
+    
+    func showSuccessAlert() {
+        showAlert("Concluído", message: "Produto adicionado no carrinho", handler: nil)
     }
     
     func showAlert(_ title: String, message: String, handler: ((UIAlertAction) -> Void)?) {

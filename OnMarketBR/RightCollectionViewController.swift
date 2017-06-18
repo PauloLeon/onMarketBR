@@ -109,14 +109,12 @@ class RightCollectionViewController: UICollectionViewController {
         if let current = self.currentOrder {
             if let id = current.number {
                 let idForVariant = current.lineItems[button.tag].id
-                let quantidade = current.lineItems[button.tag].quantity
-            
+                let quantidade = current.lineItems[button.tag].quantity          
                 var data = URLRequestParams()
                 data["line_item[quantity]"] = quantidade!+1
                 SVProgressHUD.show()
                 CartApiClient.updateLineItem(id, lineItemID: idForVariant!, data: data, success: {
                     order in
-                    Order.currentOrder = order
                     self.fetchOrders()
                 }, failure: { apiError in
                     self.showApiErrorAlert(apiError)

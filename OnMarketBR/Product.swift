@@ -7,6 +7,7 @@
 //
 
 import SwiftyJSON
+import SVProgressHUD
 
 class Product {
     
