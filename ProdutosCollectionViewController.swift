@@ -81,11 +81,10 @@ class ProdutosCollectionViewController: UICollectionViewController {
     }
     
     func addingProduct(button: UIButton){
-        if /*!(currentOrder != nil) { */
-            !Order.hasCurrentOrder {
+        if !Order.hasCurrentOrder {
             OrderApiClient.createOrder({ order in
                 Order.currentOrder = order
-                self.addProductToCart(button: button)
+                self.createProductInCart(button: button)
             }, failure: { apiError in
                 self.showApiErrorAlert(apiError)
             })
@@ -102,7 +101,7 @@ class ProdutosCollectionViewController: UICollectionViewController {
     }
     
     func addProductToCart(button: UIButton){
-        if let current = self.currentOrder {
+        if let current = Order.currentOrder {
             if let id = current.number {
                 let idForVariant = current.lineItems[button.tag].id
                 let quantidade = current.lineItems[button.tag].quantity
@@ -117,6 +116,23 @@ class ProdutosCollectionViewController: UICollectionViewController {
             }
         }
     }
+    
+    func createProductInCart(button: UIButton){
+        if let current = Order.currentOrder {
+            if let id = current.number {
+               var data = URLRequestParams()
+                data["line_item[variant_id]"] = self.products[button.tag].id
+                data["line_item[quantity]"] = 1
+                CartApiClient.addLineItem(id, data: data, success: {
+                    order in
+                    Order.currentOrder = order
+                }, failure: { apiError in
+                    self.showApiErrorAlert(apiError)
+                })
+            }
+        }
+    }
+
     
     func fetchCurrentOrder(){
         OrderApiClient.current({ currentOrder in
@@ -176,5 +192,4 @@ class ProdutosCollectionViewController: UICollectionViewController {
         ac.addAction(ok)
         present(ac, animated: true, completion: nil)
     }
-
 }
