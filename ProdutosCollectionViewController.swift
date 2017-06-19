@@ -21,6 +21,7 @@ class ProdutosCollectionViewController: UICollectionViewController {
     var products = [Product]()
     var currentOrder: Order?
     var isLoading = true
+    let cartHelper = CartHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,6 @@ class ProdutosCollectionViewController: UICollectionViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         SVProgressHUD.show()
-        fetchCurrentOrder()
         fetchProdutos()
     }
     
@@ -77,87 +77,9 @@ class ProdutosCollectionViewController: UICollectionViewController {
     }
     
     func addingProduct(button: UIButton){
-        SVProgressHUD.show()
-        if !Order.hasCurrentOrder {
-            OrderApiClient.createOrder({ order in
-                Order.currentOrder = order
-                self.createProductInCart(button: button)
-            }, failure: { apiError in
-                self.showApiErrorAlert(apiError)
-            })
-        } else {
-            let idForVariant = fetchProductInCart(button: button)
-            if(idForVariant != -1){
-                addProductToCart(button: button, idForVariant: idForVariant)
-            }else{
-                createProductInCart(button: button)
-            }
-        }
+        cartHelper.addingProduct(button: button, products: self.products, viewforAlert: self)
     }
-    
-    func addProductToCart(button: UIButton, idForVariant: Int){
-        if let current = Order.currentOrder {
-            if let idForRequest = current.number {
-                var quantidade: Int?
-                for item in current.lineItems{
-                    if(item.variant_id == self.products[button.tag].id){
-                        quantidade = item.quantity!
-                    }
-                }
-                var data = URLRequestParams()
-                data["line_item[quantity]"] = quantidade!+1
-                CartApiClient.updateLineItem(idForRequest, lineItemID: idForVariant, data: data, success: {
-                    order in
-                    SVProgressHUD.dismiss()
-                    self.showSuccessAlert()
-                }, failure: { apiError in
-                    self.showApiErrorAlert(apiError)
-                    SVProgressHUD.dismiss()
-                })
-            }
-        }
-    }
-    
-    func createProductInCart(button: UIButton){
-        if let current = Order.currentOrder {
-            if let id = current.number {
-               var data = URLRequestParams()
-                data["line_item[variant_id]"] = self.products[button.tag].id
-                data["line_item[quantity]"] = 1
-                CartApiClient.addLineItem(id, data: data, success: {
-                    order in
-                    SVProgressHUD.dismiss()
-                    self.showSuccessAlert()
-                }, failure: { apiError in
-                    self.showApiErrorAlert(apiError)
-                    SVProgressHUD.dismiss()
-                })
-            }
-        }
-    }
-    
-    func fetchProductInCart(button: UIButton) -> Int{
-        if let current = Order.currentOrder {
-            if (!current.lineItems.isEmpty){
-                for item in current.lineItems {
-                    if(item.variant_id == self.products[button.tag].id){
-                        return item.id!
-                    }
-                }
-            }
-        }
-        return -1
-    }
-
-    func fetchCurrentOrder(){
-        OrderApiClient.current({ currentOrder in
-            Order.currentOrder = currentOrder
-            print("getOrderOK")
-        }, failure: { apiError in
-            self.showApiErrorAlert(apiError)
-        })
-    }
-
+ 
     func roundCells(cell: UICollectionViewCell) {
         cell.layer.cornerRadius = 2.0
         cell.layer.borderWidth = 1.0
@@ -170,12 +92,6 @@ class ProdutosCollectionViewController: UICollectionViewController {
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-    }
-    
-    fileprivate func setupSideMenu() {
-        SideMenuManager.menuRightNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenuNavigationController") as? UISideMenuNavigationController
-        SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -193,23 +109,8 @@ class ProdutosCollectionViewController: UICollectionViewController {
             SVProgressHUD.dismiss()
             self.collectionView?.reloadData()
         }, failure: { apiError in
-            self.showApiErrorAlert(apiError)
+            print(apiError)
         })
-    }
-    
-    func showApiErrorAlert(_ apiError: ApiError) {
-        showAlert("Whooops!!!", message: apiError.errorMessage(), handler: nil)
-    }
-    
-    func showSuccessAlert() {
-        showAlert("Concluído", message: "Produto adicionado no carrinho", handler: nil)
-    }
-    
-    func showAlert(_ title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: handler)
-        ac.addAction(ok)
-        present(ac, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){

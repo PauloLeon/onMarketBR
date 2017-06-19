@@ -26,7 +26,7 @@ class SubCategoriaTableViewController: UITableViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
     }
-
+    
     //for status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

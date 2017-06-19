@@ -14,34 +14,24 @@ class CitiesTableViewController: UITableViewController{
     
     let resultsViewController = UITableViewController()
     let searchController = UISearchController(searchResultsController: nil)
-    //var searchController: UISearchController!
-    
     var locais = [Cities]()
     var filteredCandies = [Cities]()
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //searchController = UISearchController(searchResultsController: self.resultsViewController)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        
         locais = [
             Cities(name:"Belém, Batista Campos"),
             Cities(name:"Belém, Cremação"),
             Cities(name:"Belém, Marco"),
             Cities(name:"Belém, Reduto")]
-            
-        
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
-        
-        
         tableView.tableHeaderView = searchController.searchBar
-        //tableView.tableHeaderView = searchController.searchBar
     }
+    
     func filterContentForSearchText(searchText: String) {
         filteredCandies = locais.filter { cidade in
         return  cidade.name.lowercased().contains(searchText.lowercased())
@@ -76,6 +66,7 @@ class CitiesTableViewController: UITableViewController{
     
     
 }
+
 extension CitiesTableViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {

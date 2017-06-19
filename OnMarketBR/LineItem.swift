@@ -51,8 +51,7 @@ class LineItem: NSObject, NSCoding {
         self.display_total = lineUpdate.display_total
         self.imageURL = lineUpdate.imageURL
     }
-    
-    // Mark :- NSCoding
+
     required init?(coder aDecoder: NSCoder) {
         id = aDecoder.decodeObject(forKey: "id") as? Int
         quantity = aDecoder.decodeObject(forKey: "quantity") as? Int

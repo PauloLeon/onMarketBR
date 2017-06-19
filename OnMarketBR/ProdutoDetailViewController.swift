@@ -8,7 +8,7 @@
 
 import UIKit
 import SideMenu
-
+import SVProgressHUD
 
 class ProdutoDetailViewController: UIViewController {
     
@@ -17,19 +17,22 @@ class ProdutoDetailViewController: UIViewController {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productQuantity: UILabel!
     @IBOutlet weak var productTotal: UILabel!
+    
     var product: Product?
-    var itensQuantity: Double = 1 {
-        didSet {
-            productQuantity.text = "\(itensQuantity)"
-        }
-    }
+    let cartHelper = CartHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         settingUI()
-        itensQuantity = 1
+    }
+    
+    //for back button in navigation, don't mess with the UX
+    override func viewWillDisappear(_ animated: Bool) {
+        if SVProgressHUD.isVisible() {
+            SVProgressHUD.dismiss()
+        }
     }
     
     func settingUI(){
@@ -40,29 +43,37 @@ class ProdutoDetailViewController: UIViewController {
             }
             productName.text = produto.name
             productPrice.text = "Unidade - \(produto.display_price ?? "num veio nada")"
+            productQuantity.text = "1"
             productTotal.text = produto.display_price
         }
     }
     
-    fileprivate func setupSideMenu() {
-        SideMenuManager.menuRightNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenuNavigationController") as? UISideMenuNavigationController
-        SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-    }
     @IBAction func addBtnPressed(sender: UIButton) {
-        itensQuantity += 1
-        if let produto = product{
-            //productTotal.text = produto.display_price
-           // productTotal.text = itensQuantity*produto.price
-            
-            productTotal.text = "\(itensQuantity * produto.price!)"
+        if let quantidade = Double(productQuantity.text!) {
+            let quantidadeNew = quantidade + 1
+            productQuantity.text = "\(Int(quantidadeNew))"
+            if let produto = product{
+                productTotal.text = "R$\(quantidadeNew * produto.price!)"
+            }
         }
     }
     @IBAction func minusBtnPressed(sender: UIButton) {
-        itensQuantity -= 1
-        if let produto = product{
-            productTotal.text = "\(itensQuantity * produto.price!)"
+        if let quantidade = Double(productQuantity.text!) {
+            if (quantidade>1) {
+                let quantidadeNew = quantidade - 1
+                productQuantity.text = "\(Int(quantidadeNew))"
+                if let produto = product{
+                    productTotal.text = "R$\(quantidadeNew * produto.price!)"
+                }
+            }
         }
     }
 
+    @IBAction func addToCart(_ sender: Any) {
+        if let produto = product{
+            if let quantidade = productQuantity.text{
+                cartHelper.addingProduct(product: produto, quantidade: Int(quantidade)!, viewforAlert: self)
+            }
+        }
+     }
 }
