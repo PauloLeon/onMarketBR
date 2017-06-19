@@ -34,7 +34,7 @@ class LineItem: NSObject, NSCoding {
         self.total = json["total"].stringValue
         self.display_total = json["display_total"].stringValue
         if let image = json["variant"]["images"].arrayValue.first {
-            self.imageURL = image["small_url"].stringValue
+            self.imageURL = "http://dev.onmarketbr.com.br/\(image["small_url"].stringValue)"
         }
     }
     

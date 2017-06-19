@@ -63,11 +63,12 @@ class RightCollectionViewController: UICollectionViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CarrinhoCollectionViewCell
             
             cell.backgroundColor = UIColor.white
-            let imageName = "toddy"
-            if let image = UIImage(named: imageName){
-                cell.produtoImage.image =  image
-            }
+            
             if let order = self.currentOrder{
+                let imageName = "toddy"
+                if let image = UIImage(named: imageName){
+                    cell.produtoImage.sd_setImage(with: URL(string:order.lineItems[indexPath.row].imageURL!), placeholderImage: image)
+                }
                 cell.produtoName.text = order.lineItems[indexPath.row].name
                 cell.produtoDesc.text = order.lineItems[indexPath.row].desc
                 cell.produtoPreco.text = order.lineItems[indexPath.row].single_display_amount
