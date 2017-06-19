@@ -25,16 +25,12 @@ class ProdutosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let sub = subCategoria {
-            print(sub.name)
-            print(sub.id)
-        }
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         SVProgressHUD.show()
         fetchProdutos()
     }
-    
+
     //for back button in navigation, don't mess with the UX
     override func viewWillDisappear(_ animated: Bool) {
         if SVProgressHUD.isVisible() {

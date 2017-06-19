@@ -62,9 +62,7 @@ class CitiesTableViewController: UITableViewController{
         cell.textLabel?.text = cidade.name
         return cell
     }
-    
-    
-    
+
 }
 
 extension CitiesTableViewController: UISearchBarDelegate {

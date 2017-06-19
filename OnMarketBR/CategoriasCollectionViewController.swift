@@ -11,7 +11,6 @@ import SideMenu
 import SVProgressHUD
 
 private let reuseIdentifier = "Cell"
-
 class CategoriasCollectionViewController: UICollectionViewController {
     
     var isLoading = true

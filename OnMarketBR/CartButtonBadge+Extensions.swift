@@ -38,7 +38,7 @@ extension UIBarButtonItem {
         addBadge(text: text!, withOffset: offset, andColor: color, andFilled: filled)
     }
     
-    private func addBadge(text: String, withOffset offset: CGPoint = CGPoint.zero, andColor color: UIColor = UIColor.red, andFilled filled: Bool = true, andFontSize fontSize: CGFloat = 11)
+    public func addBadge(text: String, withOffset offset: CGPoint = CGPoint.zero, andColor color: UIColor = UIColor.red, andFilled filled: Bool = true, andFontSize fontSize: CGFloat = 11)
     {
         guard let view = self.value(forKey: "view") as? UIView else { return }
         
