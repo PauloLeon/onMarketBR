@@ -77,7 +77,9 @@ class OrderApiClient: BaseApiClient {
                 case .success:
                     let json = JSON(data: response.data!)
                     let order = Order(fromJSON: json)
-                    
+                    if(!Guest.exists){
+                        Guest.currentGuest = Guest(token: json["token"].stringValue)
+                    }
                     success(order)
                 case .failure(_):
                     let apiError = ApiError(response: response)

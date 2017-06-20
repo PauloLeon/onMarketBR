@@ -13,6 +13,7 @@
 		0B5FFE4F1EEE777900802B98 /* CartApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE4E1EEE777900802B98 /* CartApiClient.swift */; };
 		0B7598481EF97C6A004C5E52 /* RoundedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */; };
 		0B75984A1EF9979B004C5E52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598491EF9979B004C5E52 /* User.swift */; };
+		0B75984C1EF9B4BA004C5E52 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75984B1EF9B4BA004C5E52 /* Guest.swift */; };
 		0BE8233B1EF839E000EE35A3 /* CartHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8233A1EF839E000EE35A3 /* CartHelper.swift */; };
 		4363994D1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363994C1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift */; };
 		4363994F1EF1AD2900AD2F4D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363994E1EF1AD2900AD2F4D /* Product.swift */; };
@@ -74,6 +75,7 @@
 		0B5FFE4E1EEE777900802B98 /* CartApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartApiClient.swift; sourceTree = "<group>"; };
 		0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedHelper.swift; sourceTree = "<group>"; };
 		0B7598491EF9979B004C5E52 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0B75984B1EF9B4BA004C5E52 /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		0BE8233A1EF839E000EE35A3 /* CartHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartHelper.swift; sourceTree = "<group>"; };
 		4363994C1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoriaTableViewController.swift; sourceTree = "<group>"; };
 		4363994E1EF1AD2900AD2F4D /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				436399501EF1B0B800AD2F4D /* ProductProperty.swift */,
 				436399521EF1B0E300AD2F4D /* Variant.swift */,
 				0B7598491EF9979B004C5E52 /* User.swift */,
+				0B75984B1EF9B4BA004C5E52 /* Guest.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				436C5B0F1EE8742B001FF067 /* String+Extensions.swift in Sources */,
 				437912EF1EE72ED90019B82E /* Taxonomies.swift in Sources */,
 				43CD9EDC1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift in Sources */,
+				0B75984C1EF9B4BA004C5E52 /* Guest.swift in Sources */,
 				43CD9EE21EDDF36400ECF914 /* LeftTableViewController.swift in Sources */,
 				0BE8233B1EF839E000EE35A3 /* CartHelper.swift in Sources */,
 				438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */,

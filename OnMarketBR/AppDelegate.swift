@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.sharedManager().enable = true
-        if !User.isLoggedIn {
+        if !User.isLoggedIn || !Guest.exists {
             createInicialOrderForToken()
         }
         return true
@@ -100,10 +100,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //create token for guest
     func createInicialOrderForToken() {
-        OrderApiClient.createOrder({ json in
-            print(json)
+        OrderApiClient.createOrder({ order in
+            print(order)
         }, failure: { apiError in
-            
+            print(apiError.errorMessage())
         })
     }
 
