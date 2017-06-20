@@ -65,10 +65,10 @@ class ProdutosCollectionViewController: UICollectionViewController {
             cell.lblEconomia.text = "not today"
             cell.addCart.addTarget(self, action: #selector(addingProduct(button:)), for:.touchUpInside)
             cell.addCart.tag = indexPath.row
-            roundCells(cell: cell)
+            RoundedHelper.roundCells(cell: cell)
             return cell
         }
-        roundCells(cell: cell)
+        RoundedHelper.roundCells(cell: cell)
         return cell
     }
     
@@ -76,20 +76,6 @@ class ProdutosCollectionViewController: UICollectionViewController {
         cartHelper.addingProduct(button: button, products: self.products, viewforAlert: self)
     }
  
-    func roundCells(cell: UICollectionViewCell) {
-        cell.layer.cornerRadius = 2.0
-        cell.layer.borderWidth = 1.0
-        cell.layer.borderColor = UIColor.clear.cgColor
-        cell.layer.masksToBounds = true
-        
-        cell.layer.shadowColor = UIColor.lightGray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        cell.layer.shadowRadius = 2.0
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

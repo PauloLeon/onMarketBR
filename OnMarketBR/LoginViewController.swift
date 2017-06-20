@@ -23,8 +23,8 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        roundButtons(button: signInButton)
-        roundButtons(button: signUpButton)
+        RoundedHelper.roundButtons(button: signInButton)
+        RoundedHelper.roundButtons(button: signUpButton)
         
         let animationView = LOTAnimationView(name: "PinJump")
         animationView?.frame = CGRect(x: 90, y: 10, width: 200, height: 200)
@@ -43,17 +43,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    func roundButtons(button: UIButton) {
-        button.layer.cornerRadius = 20.0
-        button.layer.borderWidth = 20.0
-        button.layer.borderColor = UIColor.clear.cgColor
-        button.layer.masksToBounds = true
-    }
-    
-    
+
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination
         controller.transitioningDelegate = self

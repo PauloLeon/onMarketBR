@@ -56,7 +56,7 @@ class RightCollectionViewController: UICollectionViewController {
                 cellFinal.carrinhoFrete.text = self.currentOrder?.display_ship_total
                 cellFinal.carrinhoPrecoFinal.text = self.currentOrder?.display_total
                 cellFinal.carrinhoEconomia.text = "not today"
-                roundCells(cell: cellFinal)
+                RoundedHelper.roundCells(cell: cellFinal)
                 return cellFinal
             }
         
@@ -86,24 +86,11 @@ class RightCollectionViewController: UICollectionViewController {
                 cell.minusButton.tag = indexPath.row
 
             }
-            roundCells(cell: cell)
+            RoundedHelper.roundCells(cell: cell)
             return cell
        }
         let cellFinal = collectionView.dequeueReusableCell(withReuseIdentifier: totalReuseIdentifier, for: indexPath) as! TotalCarrinhoCollectionViewCell
         return cellFinal
-    }
-    
-    func roundCells(cell: UICollectionViewCell) {
-        cell.layer.cornerRadius = 2.0
-        cell.layer.borderWidth = 1.0
-        cell.layer.borderColor = UIColor.clear.cgColor
-        cell.layer.masksToBounds = true
-        cell.layer.shadowColor = UIColor.lightGray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        cell.layer.shadowRadius = 2.0
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
     }
     
     func addingProduct(button: UIButton){

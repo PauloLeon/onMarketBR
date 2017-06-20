@@ -60,7 +60,7 @@ class CategoriasCollectionViewController: UICollectionViewController {
             }
             cell.lblCategorias.text = self.taxonomies[indexPath.row].name
             
-            roundCells(cell: cell)
+            RoundedHelper.roundCells(cell: cell)
         }
         return cell
     }
@@ -69,20 +69,6 @@ class CategoriasCollectionViewController: UICollectionViewController {
         return .lightContent
     }
     
-    func roundCells(cell: UICollectionViewCell) {
-        cell.layer.cornerRadius = 2.0
-        cell.layer.borderWidth = 1.0
-        cell.layer.borderColor = UIColor.clear.cgColor
-        cell.layer.masksToBounds = true
-        
-        cell.layer.shadowColor = UIColor.lightGray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        cell.layer.shadowRadius = 2.0
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-    }
-
     fileprivate func setupSideMenu() {
         // Define the menus
         SideMenuManager.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
