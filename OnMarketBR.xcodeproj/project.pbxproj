@@ -141,6 +141,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B75983D1EF978C5004C5E52 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43CD9EE11EDDF36400ECF914 /* LeftTableViewController.swift */,
+				4364B6E61EDF035A00C3EEF6 /* RightCollectionViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0B75983E1EF9791D004C5E52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4364B6E81EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift */,
+				4364B6EA1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0B75983F1EF97976004C5E52 /* Welcome+Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				437912E91EE5A7410019B82E /* CitiesTableViewController.swift */,
+			);
+			name = "Welcome+Tutorial";
+			sourceTree = "<group>";
+		};
+		0B7598401EF9798A004C5E52 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0B7598421EF979B4004C5E52 /* Views */,
+				0B7598411EF97998004C5E52 /* Controllers */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		0B7598411EF97998004C5E52 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */,
+				4363994C1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift */,
+				43CD9EDF1EDDAECF00ECF914 /* ProdutosCollectionViewController.swift */,
+				43FE4E691EE1CF2700D13D0E /* ProdutoDetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0B7598421EF979B4004C5E52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43930B401ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift */,
+				43CD9EDB1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0B7598431EF979D5004C5E52 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				436C5B061EE86D82001FF067 /* Controllers */,
+				437912ED1EE72CAF0019B82E /* Model */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		0B7598441EF97A06004C5E52 /* Helpers+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0BE8233A1EF839E000EE35A3 /* CartHelper.swift */,
+				436C5B0E1EE8742B001FF067 /* String+Extensions.swift */,
+				F2DB48A71EF8549300A7459A /* CartButtonBadge+Extensions.swift */,
+			);
+			name = "Helpers+Extensions";
+			sourceTree = "<group>";
+		};
+		0B7598451EF97A1E004C5E52 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				438DCA6B1ED86F7B0038BB4E /* Main.storyboard */,
+				43CD9EDA1EDDACE700ECF914 /* Support Files */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		0B7598461EF97A42004C5E52 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43FE4E6B1EE1DDF000D13D0E /* LoginViewController.swift */,
+				43FE4E6D1EE1E66A00D13D0E /* RegisterViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		2C47DE1D64CAA71F4597707C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +242,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		436C5B061EE86D82001FF067 /* ApiClient */ = {
+		436C5B061EE86D82001FF067 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				436C5B071EE86DCB001FF067 /* BaseApiClient.swift */,
@@ -159,16 +251,7 @@
 				0B5FFE4E1EEE777900802B98 /* CartApiClient.swift */,
 				436399541EF1B2B300AD2F4D /* ProductApiClient.swift */,
 			);
-			name = ApiClient;
-			sourceTree = "<group>";
-		};
-		436C5B0D1EE87402001FF067 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				436C5B0E1EE8742B001FF067 /* String+Extensions.swift */,
-				F2DB48A71EF8549300A7459A /* CartButtonBadge+Extensions.swift */,
-			);
-			name = Extensions;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		437912ED1EE72CAF0019B82E /* Model */ = {
@@ -213,21 +296,14 @@
 		438DCA661ED86F7B0038BB4E /* OnMarketBR */ = {
 			isa = PBXGroup;
 			children = (
-				438DCA6B1ED86F7B0038BB4E /* Main.storyboard */,
-				437912E91EE5A7410019B82E /* CitiesTableViewController.swift */,
-				43930B3E1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift */,
-				4363994C1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift */,
-				43CD9EDF1EDDAECF00ECF914 /* ProdutosCollectionViewController.swift */,
-				43FE4E691EE1CF2700D13D0E /* ProdutoDetailViewController.swift */,
-				0BE8233A1EF839E000EE35A3 /* CartHelper.swift */,
-				436C5B0D1EE87402001FF067 /* Extensions */,
-				436C5B061EE86D82001FF067 /* ApiClient */,
-				437912ED1EE72CAF0019B82E /* Model */,
-				43FE4E6F1EE1EAF100D13D0E /* Login */,
-				43CD9EE81EDE16A700ECF914 /* Cells */,
-				43CD9EE71EDE168C00ECF914 /* SideMenus */,
 				F2DC0CE31EEEA0D3008FEDFF /* Animations */,
-				43CD9EDA1EDDACE700ECF914 /* Support Files */,
+				0B7598451EF97A1E004C5E52 /* App */,
+				0B7598441EF97A06004C5E52 /* Helpers+Extensions */,
+				0B7598401EF9798A004C5E52 /* Home */,
+				43FE4E6F1EE1EAF100D13D0E /* Login */,
+				0B7598431EF979D5004C5E52 /* Networking */,
+				43CD9EE71EDE168C00ECF914 /* SideMenus */,
+				0B75983F1EF97976004C5E52 /* Welcome+Tutorial */,
 			);
 			path = OnMarketBR;
 			sourceTree = "<group>";
@@ -264,28 +340,16 @@
 		43CD9EE71EDE168C00ECF914 /* SideMenus */ = {
 			isa = PBXGroup;
 			children = (
-				43CD9EE11EDDF36400ECF914 /* LeftTableViewController.swift */,
-				4364B6E61EDF035A00C3EEF6 /* RightCollectionViewController.swift */,
+				0B75983E1EF9791D004C5E52 /* Views */,
+				0B75983D1EF978C5004C5E52 /* Controllers */,
 			);
 			name = SideMenus;
-			sourceTree = "<group>";
-		};
-		43CD9EE81EDE16A700ECF914 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				4364B6E81EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift */,
-				43930B401ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift */,
-				43CD9EDB1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift */,
-				4364B6EA1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift */,
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 		43FE4E6F1EE1EAF100D13D0E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				43FE4E6B1EE1DDF000D13D0E /* LoginViewController.swift */,
-				43FE4E6D1EE1E66A00D13D0E /* RegisterViewController.swift */,
+				0B7598461EF97A42004C5E52 /* Controllers */,
 			);
 			name = Login;
 			sourceTree = "<group>";
