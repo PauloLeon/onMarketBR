@@ -83,6 +83,17 @@ extension BaseApiClient {
                 default:                                    params = nil
             }
             
+            if User.isLoggedIn {
+                let token = User.currentUser!.token!
+                
+                if params == nil {
+                    params = ["token" : token]
+                } else {
+                    params!["token"] = token
+                }
+            }
+            return params
+            /*
             let token = "2b278662dd5776d0cc0df50f6c9303af30140c3db365889f"
             
             if params == nil {
@@ -90,7 +101,7 @@ extension BaseApiClient {
             } else {
                 params!["token"] = token
             }
-            return params
+            return params */
         }
         
         func asURLRequest() throws -> URLRequest {

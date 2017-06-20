@@ -12,6 +12,7 @@
 		0B5FFE401EEE427500802B98 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3F1EEE427500802B98 /* LineItem.swift */; };
 		0B5FFE4F1EEE777900802B98 /* CartApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE4E1EEE777900802B98 /* CartApiClient.swift */; };
 		0B7598481EF97C6A004C5E52 /* RoundedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */; };
+		0B75984A1EF9979B004C5E52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598491EF9979B004C5E52 /* User.swift */; };
 		0BE8233B1EF839E000EE35A3 /* CartHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8233A1EF839E000EE35A3 /* CartHelper.swift */; };
 		4363994D1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363994C1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift */; };
 		4363994F1EF1AD2900AD2F4D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363994E1EF1AD2900AD2F4D /* Product.swift */; };
@@ -72,6 +73,7 @@
 		0B5FFE3F1EEE427500802B98 /* LineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
 		0B5FFE4E1EEE777900802B98 /* CartApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartApiClient.swift; sourceTree = "<group>"; };
 		0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedHelper.swift; sourceTree = "<group>"; };
+		0B7598491EF9979B004C5E52 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0BE8233A1EF839E000EE35A3 /* CartHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartHelper.swift; sourceTree = "<group>"; };
 		4363994C1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoriaTableViewController.swift; sourceTree = "<group>"; };
 		4363994E1EF1AD2900AD2F4D /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				4363994E1EF1AD2900AD2F4D /* Product.swift */,
 				436399501EF1B0B800AD2F4D /* ProductProperty.swift */,
 				436399521EF1B0E300AD2F4D /* Variant.swift */,
+				0B7598491EF9979B004C5E52 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				43FE4E6E1EE1E66A00D13D0E /* RegisterViewController.swift in Sources */,
 				43930B3F1ED87D0900CAA8A8 /* CategoriasCollectionViewController.swift in Sources */,
 				4364B6E71EDF035A00C3EEF6 /* RightCollectionViewController.swift in Sources */,
+				0B75984A1EF9979B004C5E52 /* User.swift in Sources */,
 				4363994F1EF1AD2900AD2F4D /* Product.swift in Sources */,
 				436C5B0A1EE871E2001FF067 /* TaxonomiesApiClient.swift in Sources */,
 				0B5FFE401EEE427500802B98 /* LineItem.swift in Sources */,
