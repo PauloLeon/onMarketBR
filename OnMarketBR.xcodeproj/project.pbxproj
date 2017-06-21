@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1AAD9C1EFABA28009D7BEA /* UserApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1AAD9B1EFABA28009D7BEA /* UserApiClient.swift */; };
 		0B5FFE3C1EEE371F00802B98 /* OrderApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3B1EEE371F00802B98 /* OrderApiClient.swift */; };
 		0B5FFE3E1EEE37DF00802B98 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3D1EEE37DF00802B98 /* Order.swift */; };
 		0B5FFE401EEE427500802B98 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3F1EEE427500802B98 /* LineItem.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1AAD9B1EFABA28009D7BEA /* UserApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApiClient.swift; sourceTree = "<group>"; };
 		0B5FFE3B1EEE371F00802B98 /* OrderApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderApiClient.swift; sourceTree = "<group>"; };
 		0B5FFE3D1EEE37DF00802B98 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0B5FFE3F1EEE427500802B98 /* LineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				0B5FFE3B1EEE371F00802B98 /* OrderApiClient.swift */,
 				0B5FFE4E1EEE777900802B98 /* CartApiClient.swift */,
 				436399541EF1B2B300AD2F4D /* ProductApiClient.swift */,
+				0B1AAD9B1EFABA28009D7BEA /* UserApiClient.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				4364B6EB1EDF4F1300C3EEF6 /* TotalCarrinhoCollectionViewCell.swift in Sources */,
 				437912F11EE7303B0019B82E /* Root.swift in Sources */,
 				4364B6E91EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift in Sources */,
+				0B1AAD9C1EFABA28009D7BEA /* UserApiClient.swift in Sources */,
 				43930B411ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift in Sources */,
 				0B5FFE4F1EEE777900802B98 /* CartApiClient.swift in Sources */,
 				43FE4E6A1EE1CF2700D13D0E /* ProdutoDetailViewController.swift in Sources */,

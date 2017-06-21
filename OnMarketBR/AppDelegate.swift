@@ -79,7 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         if #available(iOS 10.0, *) {
             let context = persistentContainer.viewContext
@@ -106,6 +105,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(apiError.errorMessage())
         })
     }
-
 }
-

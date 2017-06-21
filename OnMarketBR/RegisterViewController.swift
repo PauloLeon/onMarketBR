@@ -20,7 +20,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        roundButtons(button: signUp)
+        RoundedHelper.roundButtons(button: signUp)
         setColorPlaceholder()
     }
     
@@ -37,20 +37,23 @@ class RegisterViewController: UIViewController {
         confirmarSenha.attributedPlaceholder = NSAttributedString(string: "Confirmar Senha", attributes: [NSForegroundColorAttributeName:UIColor.white])
     }
     
-    func roundButtons(button: UIButton) {
-        button.layer.cornerRadius = 20.0
-        button.layer.borderWidth = 20.0
-        button.layer.borderColor = UIColor.clear.cgColor
-        button.layer.masksToBounds = true
-    }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.setStatusBarStyle(.default, animated: true)
+    }
+    
+    func requestData() -> URLRequestParams{
+        var data = URLRequestParams()
+        
+        data["user[name]"] = nome.text! as AnyObject?
+        data["user[email]"]     = email.text! as AnyObject?
+        data["user[password]"]  = senha! as AnyObject?
+        data["user[cpf]"]     = cpf.text! as AnyObject?
+        
+        return data
     }
 
 }

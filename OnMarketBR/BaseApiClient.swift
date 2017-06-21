@@ -26,6 +26,9 @@ extension BaseApiClient {
         
         // MARK: - Routes
         case home
+        case login(data: URLRequestParams)
+        case signup(data: URLRequestParams)
+        case forgotPassword(data: URLRequestParams)
         
         case orders
         case updateOrder(id: String, data: URLRequestParams)
@@ -43,7 +46,7 @@ extension BaseApiClient {
         // MARK: - Methods
         var method: HTTPMethod {
             switch self {
-                case .addItem, .createOrder:
+                case .login, .signup, .forgotPassword, .addItem, .createOrder:
                     return .post
                 case .removeItem:
                     return .delete
@@ -57,14 +60,17 @@ extension BaseApiClient {
         // MARK: - Paths
         var path: String {
             switch self {
-                case .home:  return "/taxonomies"
-                case .orders: return "/orders"
-                case .cart: return "/orders/current"
+                case .home:                                                 return "/taxonomies"
+                case .login(_):                                             return "/users/sign_in"
+                case .signup(_):                                            return "/users"
+                case .forgotPassword(_):                                       return "/password/reset"
+                case .orders:                                                return "/orders"
+                case .cart:                                                  return "/orders/current"
                 case .updateOrder(let id, _):                                   return "/orders/\(id)"
-                case .addItem(let order_id, _):                                 return "/orders/\(order_id)/line_items"
-                case .updateItem(let order_id, let item_id, _):                 return "/orders/\(order_id)/line_items/\(item_id)"
-                case .removeItem(let order_id, let item_id):                    return "/orders/\(order_id)/line_items/\(item_id)"
-                case .products(_):                                              return "/products"
+                case .addItem(let order_id, _):                                return "/orders/\(order_id)/line_items"
+                case .updateItem(let order_id, let item_id, _):                  return "/orders/\(order_id)/line_items/\(item_id)"
+                case .removeItem(let order_id, let item_id):                     return "/orders/\(order_id)/line_items/\(item_id)"
+                case .products(_):                                             return "/products"
                 case .createOrder(_):                                           return "/orders/"
 
             }
@@ -75,6 +81,9 @@ extension BaseApiClient {
             var params: URLRequestParams?
             
             switch self {
+                case .login(let data):                      params = data
+                case .signup(let data):                     params = data
+                case .forgotPassword(let data):             params = data
                 case .updateOrder(_, let data):             params = data
                 case .addItem(_, let data):                 params = data
                 case .updateItem(_, _, let data):           params = data
@@ -92,8 +101,10 @@ extension BaseApiClient {
                     params!["token"] = token
                 }
             }else if Guest.exists{
-                let token = Guest.currentGuest!.tokenGuest!
-                
+                //let token = Guest.currentGuest!.tokenGuest!
+                //just for test
+                let token = "2b278662dd5776d0cc0df50f6c9303af30140c3db365889f"
+
                 if params == nil {
                     params = ["token" : token]
                 } else {
