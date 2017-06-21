@@ -15,6 +15,9 @@
 		0B7598481EF97C6A004C5E52 /* RoundedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */; };
 		0B75984A1EF9979B004C5E52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598491EF9979B004C5E52 /* User.swift */; };
 		0B75984C1EF9B4BA004C5E52 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75984B1EF9B4BA004C5E52 /* Guest.swift */; };
+		0BD168E31EFB0A6400F90A65 /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD168E21EFB0A6400F90A65 /* AddressTableViewController.swift */; };
+		0BD168E71EFB0B3D00F90A65 /* PinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD168E61EFB0B3D00F90A65 /* PinkTableViewCell.swift */; };
+		0BD168E91EFB0B4F00F90A65 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD168E81EFB0B4F00F90A65 /* AddressTableViewCell.swift */; };
 		0BE8233B1EF839E000EE35A3 /* CartHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8233A1EF839E000EE35A3 /* CartHelper.swift */; };
 		4363994D1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363994C1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift */; };
 		4363994F1EF1AD2900AD2F4D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363994E1EF1AD2900AD2F4D /* Product.swift */; };
@@ -78,6 +81,9 @@
 		0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedHelper.swift; sourceTree = "<group>"; };
 		0B7598491EF9979B004C5E52 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B75984B1EF9B4BA004C5E52 /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		0BD168E21EFB0A6400F90A65 /* AddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
+		0BD168E61EFB0B3D00F90A65 /* PinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinkTableViewCell.swift; sourceTree = "<group>"; };
+		0BD168E81EFB0B4F00F90A65 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		0BE8233A1EF839E000EE35A3 /* CartHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartHelper.swift; sourceTree = "<group>"; };
 		4363994C1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoriaTableViewController.swift; sourceTree = "<group>"; };
 		4363994E1EF1AD2900AD2F4D /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -242,6 +248,32 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		0BD168E11EFB093700F90A65 /* Enderecos */ = {
+			isa = PBXGroup;
+			children = (
+				0BD168E51EFB0B1900F90A65 /* Views */,
+				0BD168E41EFB0A6800F90A65 /* Controller */,
+			);
+			name = Enderecos;
+			sourceTree = "<group>";
+		};
+		0BD168E41EFB0A6800F90A65 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0BD168E21EFB0A6400F90A65 /* AddressTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0BD168E51EFB0B1900F90A65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0BD168E61EFB0B3D00F90A65 /* PinkTableViewCell.swift */,
+				0BD168E81EFB0B4F00F90A65 /* AddressTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		2C47DE1D64CAA71F4597707C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +342,7 @@
 			children = (
 				F2DC0CE31EEEA0D3008FEDFF /* Animations */,
 				0B7598451EF97A1E004C5E52 /* App */,
+				0BD168E11EFB093700F90A65 /* Enderecos */,
 				0B7598441EF97A06004C5E52 /* Helpers+Extensions */,
 				0B7598401EF9798A004C5E52 /* Home */,
 				43FE4E6F1EE1EAF100D13D0E /* Login */,
@@ -581,8 +614,10 @@
 				43CD9EE21EDDF36400ECF914 /* LeftTableViewController.swift in Sources */,
 				0BE8233B1EF839E000EE35A3 /* CartHelper.swift in Sources */,
 				438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */,
+				0BD168E71EFB0B3D00F90A65 /* PinkTableViewCell.swift in Sources */,
 				436399511EF1B0B800AD2F4D /* ProductProperty.swift in Sources */,
 				F2DB48A81EF8549300A7459A /* CartButtonBadge+Extensions.swift in Sources */,
+				0BD168E91EFB0B4F00F90A65 /* AddressTableViewCell.swift in Sources */,
 				437912EA1EE5A7420019B82E /* CitiesTableViewController.swift in Sources */,
 				438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */,
 				0B5FFE3C1EEE371F00802B98 /* OrderApiClient.swift in Sources */,
@@ -603,6 +638,7 @@
 				436C5B0A1EE871E2001FF067 /* TaxonomiesApiClient.swift in Sources */,
 				0B5FFE401EEE427500802B98 /* LineItem.swift in Sources */,
 				0B7598481EF97C6A004C5E52 /* RoundedHelper.swift in Sources */,
+				0BD168E31EFB0A6400F90A65 /* AddressTableViewController.swift in Sources */,
 				436399551EF1B2B300AD2F4D /* ProductApiClient.swift in Sources */,
 				4363994D1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift in Sources */,
 				0B5FFE3E1EEE37DF00802B98 /* Order.swift in Sources */,

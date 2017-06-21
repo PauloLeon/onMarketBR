@@ -55,5 +55,4 @@ class RegisterViewController: UIViewController {
         
         return data
     }
-
 }

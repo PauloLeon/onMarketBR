@@ -45,9 +45,11 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     }
 
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination
-        controller.transitioningDelegate = self
-        controller.modalPresentationStyle = .custom
+        if segue.identifier == "segueToRegister"{
+            let controller = segue.destination
+            controller.transitioningDelegate = self
+            controller.modalPresentationStyle = .custom
+        }
     }
     
     // MARK: UIViewControllerTransitioningDelegate

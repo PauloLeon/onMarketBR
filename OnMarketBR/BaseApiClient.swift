@@ -94,7 +94,6 @@ extension BaseApiClient {
             
             if User.isLoggedIn {
                 let token = User.currentUser!.token!
-                
                 if params == nil {
                     params = ["token" : token]
                 } else {
@@ -104,7 +103,6 @@ extension BaseApiClient {
                 //let token = Guest.currentGuest!.tokenGuest!
                 //just for test
                 let token = "2b278662dd5776d0cc0df50f6c9303af30140c3db365889f"
-
                 if params == nil {
                     params = ["token" : token]
                 } else {
