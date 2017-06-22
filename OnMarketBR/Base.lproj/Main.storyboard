@@ -1055,7 +1055,7 @@
         <scene sceneID="18Z-MK-HGM">
             <objects>
                 <navigationController id="6cU-m4-NXh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="unf-VI-zFW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="unf-VI-zFW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.16078431369999999" green="0.58431372550000005" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1258,7 +1258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RsL-9f-9Gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="1491"/>
+            <point key="canvasLocation" x="1241" y="1472"/>
         </scene>
         <!--Locais de Entrega-->
         <scene sceneID="CKf-cJ-U5d">
@@ -1267,9 +1267,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="BJQ-L3-2oz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellPink" rowHeight="125" id="p2c-3U-L9C" customClass="PinkTableViewCell" customModule="OnMarketBR" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellPink" rowHeight="125" id="p2c-3U-L9C" customClass="PinkTableViewCell" customModule="OnMarketBR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p2c-3U-L9C" id="kld-PW-XZ7">
@@ -1308,7 +1308,6 @@
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="labelDrag" destination="1xW-Zx-TdU" id="8LG-KG-q7K"/>
                                     <outlet property="labelInfo" destination="Aef-8d-diV" id="9Tw-M3-Ovq"/>
@@ -1370,7 +1369,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="address" destination="eGT-fy-T5P" id="zcr-iI-vas"/>

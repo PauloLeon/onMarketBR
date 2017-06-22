@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B1AAD9C1EFABA28009D7BEA /* UserApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1AAD9B1EFABA28009D7BEA /* UserApiClient.swift */; };
+		0B1F95361EFC4815008E6682 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F95351EFC4815008E6682 /* Address.swift */; };
 		0B5FFE3C1EEE371F00802B98 /* OrderApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3B1EEE371F00802B98 /* OrderApiClient.swift */; };
 		0B5FFE3E1EEE37DF00802B98 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3D1EEE37DF00802B98 /* Order.swift */; };
 		0B5FFE401EEE427500802B98 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3F1EEE427500802B98 /* LineItem.swift */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		0B1AAD9B1EFABA28009D7BEA /* UserApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApiClient.swift; sourceTree = "<group>"; };
+		0B1F95351EFC4815008E6682 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		0B5FFE3B1EEE371F00802B98 /* OrderApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderApiClient.swift; sourceTree = "<group>"; };
 		0B5FFE3D1EEE37DF00802B98 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0B5FFE3F1EEE427500802B98 /* LineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				436399521EF1B0E300AD2F4D /* Variant.swift */,
 				0B7598491EF9979B004C5E52 /* User.swift */,
 				0B75984B1EF9B4BA004C5E52 /* Guest.swift */,
+				0B1F95351EFC4815008E6682 /* Address.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				F2DB48A81EF8549300A7459A /* CartButtonBadge+Extensions.swift in Sources */,
 				0BD168E91EFB0B4F00F90A65 /* AddressTableViewCell.swift in Sources */,
 				437912EA1EE5A7420019B82E /* CitiesTableViewController.swift in Sources */,
+				0B1F95361EFC4815008E6682 /* Address.swift in Sources */,
 				438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */,
 				0B5FFE3C1EEE371F00802B98 /* OrderApiClient.swift in Sources */,
 				43CD9EE01EDDAECF00ECF914 /* ProdutosCollectionViewController.swift in Sources */,
@@ -789,12 +793,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 92F4M7VW6Y;
 				INFOPLIST_FILE = OnMarketBR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmarket.OnMarketBR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -805,12 +811,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 92F4M7VW6Y;
 				INFOPLIST_FILE = OnMarketBR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onmarket.OnMarketBR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

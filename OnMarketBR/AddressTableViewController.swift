@@ -66,7 +66,6 @@ class AddressTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         if editActionsForRowAt.row == 0 && editActionsForRowAt.section == 0{
             let delete = UITableViewRowAction(style: .destructive, title: "Apagar") { action, index in
-                print("share button tapped")
                 self.countPinkCell = 0
                 tableView.reloadData()
             }
@@ -74,15 +73,17 @@ class AddressTableViewController: UITableViewController {
             return [delete]
         }
         let edit = UITableViewRowAction(style: .normal, title: "Editar") { action, index in
-            print("more button tapped")
         }
         edit.backgroundColor = .lightGray
         
         let delete = UITableViewRowAction(style: .destructive, title: "Apagar") { action, index in
-            print("share button tapped")
         }
         delete.backgroundColor = .red
         
         return [delete, edit]
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: false)
     }
 }
