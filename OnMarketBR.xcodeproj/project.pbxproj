@@ -16,6 +16,8 @@
 		0B7598481EF97C6A004C5E52 /* RoundedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */; };
 		0B75984A1EF9979B004C5E52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598491EF9979B004C5E52 /* User.swift */; };
 		0B75984C1EF9B4BA004C5E52 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75984B1EF9B4BA004C5E52 /* Guest.swift */; };
+		0B8DEEB41EFD6E0A00F753F2 /* TaxonomiesViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8DEEB31EFD6E0A00F753F2 /* TaxonomiesViewModels.swift */; };
+		0B8DEEB61EFD706200F753F2 /* ProductViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8DEEB51EFD706200F753F2 /* ProductViewModels.swift */; };
 		0BD168E31EFB0A6400F90A65 /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD168E21EFB0A6400F90A65 /* AddressTableViewController.swift */; };
 		0BD168E71EFB0B3D00F90A65 /* PinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD168E61EFB0B3D00F90A65 /* PinkTableViewCell.swift */; };
 		0BD168E91EFB0B4F00F90A65 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD168E81EFB0B4F00F90A65 /* AddressTableViewCell.swift */; };
@@ -83,6 +85,8 @@
 		0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedHelper.swift; sourceTree = "<group>"; };
 		0B7598491EF9979B004C5E52 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B75984B1EF9B4BA004C5E52 /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		0B8DEEB31EFD6E0A00F753F2 /* TaxonomiesViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxonomiesViewModels.swift; sourceTree = "<group>"; };
+		0B8DEEB51EFD706200F753F2 /* ProductViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewModels.swift; sourceTree = "<group>"; };
 		0BD168E21EFB0A6400F90A65 /* AddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
 		0BD168E61EFB0B3D00F90A65 /* PinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinkTableViewCell.swift; sourceTree = "<group>"; };
 		0BD168E81EFB0B4F00F90A65 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 		0B7598401EF9798A004C5E52 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0B8DEEB21EFD6DE900F753F2 /* ViewModels */,
 				0B7598421EF979B4004C5E52 /* Views */,
 				0B7598411EF97998004C5E52 /* Controllers */,
 			);
@@ -248,6 +253,15 @@
 				43FE4E6D1EE1E66A00D13D0E /* RegisterViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0B8DEEB21EFD6DE900F753F2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0B8DEEB31EFD6E0A00F753F2 /* TaxonomiesViewModels.swift */,
+				0B8DEEB51EFD706200F753F2 /* ProductViewModels.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		0BD168E11EFB093700F90A65 /* Enderecos */ = {
@@ -622,6 +636,7 @@
 				F2DB48A81EF8549300A7459A /* CartButtonBadge+Extensions.swift in Sources */,
 				0BD168E91EFB0B4F00F90A65 /* AddressTableViewCell.swift in Sources */,
 				437912EA1EE5A7420019B82E /* CitiesTableViewController.swift in Sources */,
+				0B8DEEB61EFD706200F753F2 /* ProductViewModels.swift in Sources */,
 				0B1F95361EFC4815008E6682 /* Address.swift in Sources */,
 				438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */,
 				0B5FFE3C1EEE371F00802B98 /* OrderApiClient.swift in Sources */,
@@ -632,6 +647,7 @@
 				0B1AAD9C1EFABA28009D7BEA /* UserApiClient.swift in Sources */,
 				43930B411ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift in Sources */,
 				0B5FFE4F1EEE777900802B98 /* CartApiClient.swift in Sources */,
+				0B8DEEB41EFD6E0A00F753F2 /* TaxonomiesViewModels.swift in Sources */,
 				43FE4E6A1EE1CF2700D13D0E /* ProdutoDetailViewController.swift in Sources */,
 				436C5B0C1EE87244001FF067 /* ApiError.swift in Sources */,
 				43FE4E6E1EE1E66A00D13D0E /* RegisterViewController.swift in Sources */,

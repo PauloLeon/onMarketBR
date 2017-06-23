@@ -12,7 +12,7 @@
 
 import SwiftyJSON
 
-class Taxonomies: NSObject {
+public class Taxonomies: NSObject {
     
     var id: Int!
     var name: String!

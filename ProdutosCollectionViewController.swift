@@ -100,7 +100,7 @@ class ProdutosCollectionViewController: UICollectionViewController {
             let detailCV = segue.destination as! ProdutoDetailViewController
             let cell = sender as! ProdutosCollectionViewCell
             let indexPaths = self.collectionView?.indexPath(for: cell)
-            detailCV.product = self.products[(indexPaths?.row)!]
+            detailCV.productViewModel = ProductViewModel(product: self.products[(indexPaths?.row)!])
         }
     }
 }

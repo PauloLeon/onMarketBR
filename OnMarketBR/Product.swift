@@ -9,7 +9,7 @@
 import SwiftyJSON
 import SVProgressHUD
 
-class Product {
+public class Product {
     
     var id: Int?
     var name: String?

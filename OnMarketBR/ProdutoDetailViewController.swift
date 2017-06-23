@@ -18,7 +18,7 @@ class ProdutoDetailViewController: UIViewController {
     @IBOutlet weak var productQuantity: UILabel!
     @IBOutlet weak var productTotal: UILabel!
     
-    var product: Product?
+    var productViewModel: ProductViewModel?
     let cartHelper = CartHelper()
 
     override func viewDidLoad() {
@@ -36,41 +36,34 @@ class ProdutoDetailViewController: UIViewController {
     }
     
     func settingUI(){
-        if let produto = product{
-            let imageName = "toddy"
-            if let image = UIImage(named: imageName){
-                productImage.sd_setImage(with: URL(string:produto.thumbnailURL!), placeholderImage: image)
-            }
-            productName.text = produto.name
-            productPrice.text = "Unidade - \(produto.display_price ?? "num veio nada")"
-            productQuantity.text = "1"
-            productTotal.text = produto.display_price
+        if let produto = productViewModel{
+            productImage = produto.productImage
+            productName.text = produto.productName
+            productPrice.text = "Unidade - \(produto.productPrice)"
+            productQuantity.text = produto.getQuantidadeForView()
+            productTotal.text = produto.productPrice
         }
     }
     
     @IBAction func addBtnPressed(sender: UIButton) {
-        if let quantidade = Double(productQuantity.text!) {
-            let quantidadeNew = quantidade + 1
-            productQuantity.text = "\(Int(quantidadeNew))"
-            if let produto = product{
-                productTotal.text = "R$\(quantidadeNew * produto.price!)"
-            }
+        if let produto = productViewModel{
+            produto.quantidadeView = produto.quantidadeView+1
+            productQuantity.text = produto.getQuantidadeForView()
+            productTotal.text = produto.getQuantidadeForView()
         }
     }
     @IBAction func minusBtnPressed(sender: UIButton) {
-        if let quantidade = Double(productQuantity.text!) {
-            if (quantidade>1) {
-                let quantidadeNew = quantidade - 1
-                productQuantity.text = "\(Int(quantidadeNew))"
-                if let produto = product{
-                    productTotal.text = "R$\(quantidadeNew * produto.price!)"
-                }
+        if let produto = productViewModel{
+            if produto.quantidadeView>1 {
+                produto.quantidadeView = produto.quantidadeView-1
+                productQuantity.text = produto.getQuantidadeForView()
+                productTotal.text = produto.getQuantidadeForView()
             }
         }
     }
-
+    
     @IBAction func addToCart(_ sender: Any) {
-        if let produto = product{
+        if let produto = productViewModel?.product{
             if let quantidade = productQuantity.text{
                 cartHelper.addingProduct(product: produto, quantidade: Int(quantidade)!, viewforAlert: self)
             }

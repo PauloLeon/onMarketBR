@@ -59,7 +59,6 @@ class CategoriasCollectionViewController: UICollectionViewController {
                 cell.imageCentral.image =  image
             }
             cell.lblCategorias.text = self.taxonomies[indexPath.row].name
-            
             RoundedHelper.roundCells(cell: cell)
         }
         return cell
