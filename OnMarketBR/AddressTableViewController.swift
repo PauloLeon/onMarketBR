@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 let reusePink = "cellPink"
 let reuseWhite = "cellWhite"
@@ -14,10 +15,21 @@ let reuseWhite = "cellWhite"
 class AddressTableViewController: UITableViewController {
 
     var countPinkCell = 1
+    var addressCacheHelper = AddressCacheHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addressCacheHelper.fetch(tableView: tableView)
+    }
+    
+    @IBAction func addAddress(_ sender: Any) {
+        addressCacheHelper.save(fullname: "Casa")
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,7 +41,7 @@ class AddressTableViewController: UITableViewController {
         case 0:
             return countPinkCell
         case 1:
-            return 2
+            return addressCacheHelper.addressCache.count
         default:
             return 1
         }
@@ -59,6 +71,10 @@ class AddressTableViewController: UITableViewController {
                 cell.imageHome.image =  image
             }
         }
+        if addressCacheHelper.addressCache.count > 0{
+            let addresscache = addressCacheHelper.addressCache[indexPath.row]
+            cell.name.text = addresscache.fullname
+        }
         RoundedHelper.roundView(view: cell.roundedView)
         return cell
     }
@@ -77,6 +93,10 @@ class AddressTableViewController: UITableViewController {
         edit.backgroundColor = .lightGray
         
         let delete = UITableViewRowAction(style: .destructive, title: "Apagar") { action, index in
+            let cell = tableView.cellForRow(at: editActionsForRowAt) as! AddressTableViewCell
+            if let fullname = cell.name.text{
+                self.addressCacheHelper.delete(fullname: fullname, tableview: tableView)
+            }
         }
         delete.backgroundColor = .red
         

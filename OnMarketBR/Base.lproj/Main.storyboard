@@ -1390,6 +1390,9 @@
                     <navigationItem key="navigationItem" title="Locais de Entrega" id="eW3-4w-zXK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="K1v-7p-tfE">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addAddress:" destination="EeK-pJ-t8f" id="weu-Uo-abF"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

@@ -46,6 +46,9 @@ class Order: NSObject, NSCoding {
     var tax_total: Float!
     var total: Float!
     var lineItems = [LineItem]()
+    var shipAddress: Address!
+    var billAddress: Address!
+
     
     var itemsCount: Int {
         return lineItems.count
@@ -83,6 +86,8 @@ class Order: NSObject, NSCoding {
             let lineItem = LineItem(fromJSON: lineItemJSON)
             self.lineItems.append(lineItem)
         }
+        self.shipAddress = Address(fromJSON: json["ship_address"])
+        self.billAddress = Address(fromJSON: json["bill_address"])
         switch json["state"].stringValue {
             case "address": self.state = .address
             case "payment": self.state = .payment

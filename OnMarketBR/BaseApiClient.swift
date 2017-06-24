@@ -100,14 +100,16 @@ extension BaseApiClient {
                     params!["token"] = token
                 }
             }else if Guest.exists{
-                let token = Guest.currentGuest!.tokenGuest!
-                //just for test
-                //let token = "2b278662dd5776d0cc0df50f6c9303af30140c3db365889f"
-                if params == nil {
-                    params = ["order_token" : token]
-                } else {
-                    params!["order_token"] = token
-                }      
+                //let token = Guest.currentGuest!.tokenGuest!
+                let token = "2b278662dd5776d0cc0df50f6c9303af30140c3db365889f"
+                //migue
+                if !(path == "/taxonomies" || path == "/products") {
+                    if params == nil {
+                        params = ["token" : token]
+                    } else {
+                        params!["token"] = token
+                    }
+                }
             }
             return params
         }
