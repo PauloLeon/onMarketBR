@@ -12,22 +12,26 @@ import CoreData
 class AddressCacheHelper: NSObject {
 
     var addressCache: [AddressCache] = []
-    
-    func save(fullname: String) {
+    //faltando o bairro
+    func save(fullname: String, address1: String, address2: String, city: String, zipcode: String, number: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entity(forEntityName: "AddressCache", in: managedContext)
         if let addressEntity = entity {
             let address = AddressCache(entity: addressEntity, insertInto: managedContext)
             address.fullname = fullname
+            address.address1 = address1
+            address.address2 =  address2
+            address.city = city
+            address.zipcode = zipcode
+            address.number = number
             do {
                 try managedContext.save()
                 addressCache.append(address)
             } catch let error as NSError {
                 print("Could not save. \(error), \(error.userInfo)")
             }
-        }
-        
+        }  
     }
     
     func fetch(tableView: UITableView){

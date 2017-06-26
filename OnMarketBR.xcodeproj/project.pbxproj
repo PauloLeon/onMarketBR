@@ -20,6 +20,7 @@
 		0B7598481EF97C6A004C5E52 /* RoundedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */; };
 		0B75984A1EF9979B004C5E52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7598491EF9979B004C5E52 /* User.swift */; };
 		0B75984C1EF9B4BA004C5E52 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75984B1EF9B4BA004C5E52 /* Guest.swift */; };
+		0B77410B1F00C20C008276DC /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77410A1F00C20C008276DC /* AddAddressViewController.swift */; };
 		0B8DEEB61EFD706200F753F2 /* ProductViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8DEEB51EFD706200F753F2 /* ProductViewModels.swift */; };
 		0BD168E31EFB0A6400F90A65 /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD168E21EFB0A6400F90A65 /* AddressTableViewController.swift */; };
 		0BD168E71EFB0B3D00F90A65 /* PinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD168E61EFB0B3D00F90A65 /* PinkTableViewCell.swift */; };
@@ -92,6 +93,7 @@
 		0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedHelper.swift; sourceTree = "<group>"; };
 		0B7598491EF9979B004C5E52 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B75984B1EF9B4BA004C5E52 /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		0B77410A1F00C20C008276DC /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
 		0B8DEEB51EFD706200F753F2 /* ProductViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewModels.swift; sourceTree = "<group>"; };
 		0BD168E21EFB0A6400F90A65 /* AddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
 		0BD168E61EFB0B3D00F90A65 /* PinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinkTableViewCell.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				0BD168E21EFB0A6400F90A65 /* AddressTableViewController.swift */,
+				0B77410A1F00C20C008276DC /* AddAddressViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				0BE8233B1EF839E000EE35A3 /* CartHelper.swift in Sources */,
 				438DCA681ED86F7B0038BB4E /* AppDelegate.swift in Sources */,
 				0BD168E71EFB0B3D00F90A65 /* PinkTableViewCell.swift in Sources */,
+				0B77410B1F00C20C008276DC /* AddAddressViewController.swift in Sources */,
 				436399511EF1B0B800AD2F4D /* ProductProperty.swift in Sources */,
 				F2DB48A81EF8549300A7459A /* CartButtonBadge+Extensions.swift in Sources */,
 				0BD168E91EFB0B4F00F90A65 /* AddressTableViewCell.swift in Sources */,

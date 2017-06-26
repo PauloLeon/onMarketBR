@@ -27,11 +27,6 @@ class AddressTableViewController: UITableViewController {
         addressCacheHelper.fetch(tableView: tableView)
     }
     
-    @IBAction func addAddress(_ sender: Any) {
-        addressCacheHelper.save(fullname: "Casa")
-        self.tableView.reloadData()
-    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
