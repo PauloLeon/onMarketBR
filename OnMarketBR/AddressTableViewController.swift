@@ -11,6 +11,7 @@ import CoreData
 
 let reusePink = "cellPink"
 let reuseWhite = "cellWhite"
+let reuseDefault = "cellDefault"
 
 class AddressTableViewController: UITableViewController {
 
@@ -61,11 +62,10 @@ class AddressTableViewController: UITableViewController {
             RoundedHelper.roundView(view: cell.roundedView)
             return cell
         }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseWhite, for: indexPath) as! AddressTableViewCell
-        
+
         if indexPath.row == 0 && indexPath.section == 1 {
             if addressCacheHelper.flagHome {
+                let cell = tableView.dequeueReusableCell(withIdentifier: reuseWhite, for: indexPath) as! AddressTableViewCell
                 let addresscache = addressCacheHelper.addressHome!
                 cell.name.text = addresscache.fullname
                 cell.address.text = addresscache.address1
@@ -75,13 +75,20 @@ class AddressTableViewController: UITableViewController {
                 }
                 cell.cepBairro.text = "\(addresscache.zipcode ?? "99999-999"),\(addresscache.number ?? "9999")"
                 cell.cityState.text = addresscache.city
+                RoundedHelper.roundView(view: cell.roundedView)
+                return cell
             }
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseDefault, for: indexPath) as! DefaultTableViewCell
+            RoundedHelper.roundView(view: cell.roundedView)
+            return cell
+
         }else if indexPath.row == 1 && indexPath.section == 1{
-            let imageName = "ic_work"
-            if let image = UIImage(named: imageName){
-                cell.imageHome.image =  image
-            }
             if addressCacheHelper.flagWork {
+                let cell = tableView.dequeueReusableCell(withIdentifier: reuseWhite, for: indexPath) as! AddressTableViewCell
+                let imageName = "ic_work"
+                if let image = UIImage(named: imageName){
+                    cell.imageHome.image =  image
+                }
                 let addresscache = addressCacheHelper.addressWork!
                 cell.name.text = addresscache.fullname
                 cell.address.text = addresscache.address1
@@ -91,10 +98,19 @@ class AddressTableViewController: UITableViewController {
                 }
                 cell.cepBairro.text = "\(addresscache.zipcode ?? "99999-999"),\(addresscache.number ?? "9999")"
                 cell.cityState.text = addresscache.city
-
+                RoundedHelper.roundView(view: cell.roundedView)
+                return cell
             }
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseDefault, for: indexPath) as! DefaultTableViewCell
+            let imageName = "ic_work"
+            if let image = UIImage(named: imageName){
+                cell.img.image =  image
+            }
+            RoundedHelper.roundView(view: cell.roundedView)
+            return cell
         }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseWhite, for: indexPath) as! AddressTableViewCell
+
         if indexPath.section == 2{
             if addressCacheHelper.addressCache.count > 0{
                 let addresscache = addressCacheHelper.addressCache[indexPath.row]
