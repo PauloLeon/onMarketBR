@@ -15,9 +15,10 @@ class AddressCacheHelper: NSObject {
     
     func save(fullname: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        if #available(iOS 10.0, *) {
-            let managedContext = appDelegate.persistentContainer.viewContext
-            let address = AddressCache(entity: AddressCache.entity(), insertInto: managedContext)
+        let managedContext = appDelegate.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "AddressCache", in: managedContext)
+        if let addressEntity = entity {
+            let address = AddressCache(entity: addressEntity, insertInto: managedContext)
             address.fullname = fullname
             do {
                 try managedContext.save()
@@ -25,23 +26,20 @@ class AddressCacheHelper: NSObject {
             } catch let error as NSError {
                 print("Could not save. \(error), \(error.userInfo)")
             }
-        } else {}
+        }
+        
     }
     
     func fetch(tableView: UITableView){
         guard let appDelegate =  UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        if #available(iOS 10.0, *) {
-            let managedContext = appDelegate.persistentContainer.viewContext
-            do {
-                addressCache = try managedContext.fetch(AddressCache.fetchRequest())
-                tableView.reloadData()
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
-            }
-        } else {
-            // Fallback on earlier versions
+        let managedContext = appDelegate.managedObjectContext
+        do {
+            addressCache = try managedContext.fetch(AddressCache.fetchRequest())
+            tableView.reloadData()
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
@@ -49,23 +47,19 @@ class AddressCacheHelper: NSObject {
         guard let appDelegate =  UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        if #available(iOS 10.0, *) {
-            let managedContext = appDelegate.persistentContainer.viewContext
-            let fetchRequest: NSFetchRequest<AddressCache> = AddressCache.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "fullname = %@", fullname)
-            do {
-                let result = try managedContext.fetch(fetchRequest).first
-                if let deleteObj = result {
-                    managedContext.delete(deleteObj)
-                    fetch(tableView: tableview)
-                } else{
-                    print("Objeto não existe no banco")
-                }
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest: NSFetchRequest<AddressCache> = AddressCache.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "fullname = %@", fullname)
+        do {
+            let result = try managedContext.fetch(fetchRequest).first
+            if let deleteObj = result {
+                managedContext.delete(deleteObj)
+                fetch(tableView: tableview)
+            } else{
+                print("Objeto não existe no banco")
             }
-        } else {
-            // Fallback on earlier versions
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
 }
