@@ -20,6 +20,7 @@ class AddAddressViewController: UIViewController{
     @IBOutlet weak var addLocalBtn: UIButton!
     var round = RoundedHelper()
     var addressCacheHelper = AddressCacheHelper()
+    var style: Int16?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,12 @@ class AddAddressViewController: UIViewController{
     }
 
     @IBAction func addLocal(_ sender: Any) {
-        addressCacheHelper.save(fullname: nomeLocal.text!, address1: endereco.text!, address2: complemento.text!, city: "Belem", zipcode: CEP.text!, number: numero.text!)
+        if verify(fullname: nomeLocal.text!, address1: endereco.text!, zipcode: CEP.text!, number: numero.text!) {
+            if let styleCustom = style{
+               addressCacheHelper.save(fullname: nomeLocal.text!, address1: endereco.text!, address2: complemento.text ?? "", city: "Belem", zipcode: CEP.text!, number: numero.text!, style: styleCustom)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     func setColorPlaceholder(){
@@ -43,8 +49,29 @@ class AddAddressViewController: UIViewController{
         complemento.attributedPlaceholder = NSAttributedString(string: "Complemento", attributes: [NSForegroundColorAttributeName:UIColor.lightGray])
     }
     
-    func showError() {
-        showAlert("Campo Vazio", message: "Você deve preencher todos os campos", handler: nil)
+    func verify(fullname: String, address1: String, zipcode: String, number: String) -> Bool{
+        if fullname.isEmpty{
+            showError(campo: "Nome do Local")
+            return false
+        }else if address1.isEmpty{
+            showError(campo: "Endereço")
+            return false
+        }else if zipcode.isEmpty{
+            showError(campo: "CEP")
+            return false
+        }else if number.isEmpty{
+            showError(campo: "Número")
+            return false
+        }
+        return true
+    }
+    
+    func showError(campo: String) {
+        showAlert("Campo Vazio", message: "Você deve preencher o campo \(campo)", handler: nil)
+    }
+    
+    func showSucess() {
+        showAlert("Endereço Cadastrado", message: "você cadastrou esse endereço com sucesso", handler: nil)
     }
     
     func showAlert(_ title: String, message: String, handler: ((UIAlertAction) -> Void)?) {

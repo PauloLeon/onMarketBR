@@ -12,8 +12,13 @@ import CoreData
 class AddressCacheHelper: NSObject {
 
     var addressCache: [AddressCache] = []
+    var addressWork:AddressCache?
+    var addressHome:AddressCache?
+    var flagHome = false
+    var flagWork = false
+    
     //faltando o bairro
-    func save(fullname: String, address1: String, address2: String, city: String, zipcode: String, number: String) {
+    func save(fullname: String, address1: String, address2: String, city: String, zipcode: String, number: String, style: Int16) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entity(forEntityName: "AddressCache", in: managedContext)
@@ -25,6 +30,7 @@ class AddressCacheHelper: NSObject {
             address.city = city
             address.zipcode = zipcode
             address.number = number
+            address.style = style
             do {
                 try managedContext.save()
                 addressCache.append(address)
@@ -41,6 +47,7 @@ class AddressCacheHelper: NSObject {
         let managedContext = appDelegate.managedObjectContext
         do {
             addressCache = try managedContext.fetch(AddressCache.fetchRequest())
+            splitAddress()
             tableView.reloadData()
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
@@ -65,5 +72,31 @@ class AddressCacheHelper: NSObject {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+    }
+    
+    func splitAddress(){
+        if self.addressCache.count > 0{
+            for (index, address) in self.addressCache.enumerated() {
+                if address.style == 0{
+                    self.addressHome = address
+                    self.addressHomeExist()
+                    self.addressCache.remove(at: index)
+                }
+            }
+            for (index, address) in self.addressCache.enumerated() {
+                if address.style == 1{
+                    self.addressWork = address
+                    self.addressWorkExist()
+                    self.addressCache.remove(at: index)
+                }
+            }
+        }
+    }
+
+    func addressHomeExist(){
+        self.flagHome = true
+    }
+    func addressWorkExist(){
+        self.flagWork = true
     }
 }
