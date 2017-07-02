@@ -11,7 +11,7 @@ import UIKit
 public final class ProductViewModel {
     
     public let product: Product
-    public var productImage: UIImageView!
+    public var productImage: String!
     public let productName: String!
     public let productPrice: String!
     public let productTotal: String!
@@ -22,9 +22,8 @@ public final class ProductViewModel {
         self.productName = self.product.name
         self.productPrice = self.product.display_price
         self.productTotal  = self.product.display_price
-        let imageName = "toddy"
-        if let image = UIImage(named: imageName){
-           self.productImage.sd_setImage(with: URL(string:product.thumbnailURL!), placeholderImage: image)
+        if let thumbnailURL = self.product.thumbnailURL{
+            self.productImage = thumbnailURL
         }
         self.quantidadeView = 1
     }

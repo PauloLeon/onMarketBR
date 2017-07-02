@@ -11,9 +11,11 @@ import UIKit
 class Guest: NSObject,NSCoding {
     
     var tokenGuest: String?
+    var order: String?
     
-    init(token: String) {
+    init(token: String, order:String) {
         self.tokenGuest = token
+        self.order = order
     }
     
     required init?(coder aDecoder: NSCoder) {

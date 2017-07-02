@@ -55,6 +55,9 @@
 		43CD9EDC1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD9EDB1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift */; };
 		43CD9EE01EDDAECF00ECF914 /* ProdutosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD9EDF1EDDAECF00ECF914 /* ProdutosCollectionViewController.swift */; };
 		43CD9EE21EDDF36400ECF914 /* LeftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD9EE11EDDF36400ECF914 /* LeftTableViewController.swift */; };
+		43EAE9441F09493D00F41B64 /* GuestCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAE9431F09493D00F41B64 /* GuestCacheHelper.swift */; };
+		43EAE9471F09767000F41B64 /* GuestCache+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAE9451F09767000F41B64 /* GuestCache+CoreDataClass.swift */; };
+		43EAE9481F09767000F41B64 /* GuestCache+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAE9461F09767000F41B64 /* GuestCache+CoreDataProperties.swift */; };
 		43FE4E6A1EE1CF2700D13D0E /* ProdutoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE4E691EE1CF2700D13D0E /* ProdutoDetailViewController.swift */; };
 		43FE4E6C1EE1DDF000D13D0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE4E6B1EE1DDF000D13D0E /* LoginViewController.swift */; };
 		43FE4E6E1EE1E66A00D13D0E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE4E6D1EE1E66A00D13D0E /* RegisterViewController.swift */; };
@@ -135,6 +138,9 @@
 		43CD9EDB1EDDAD5900ECF914 /* ProdutosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProdutosCollectionViewCell.swift; path = ../ProdutosCollectionViewCell.swift; sourceTree = "<group>"; };
 		43CD9EDF1EDDAECF00ECF914 /* ProdutosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProdutosCollectionViewController.swift; path = ../ProdutosCollectionViewController.swift; sourceTree = "<group>"; };
 		43CD9EE11EDDF36400ECF914 /* LeftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTableViewController.swift; sourceTree = "<group>"; };
+		43EAE9431F09493D00F41B64 /* GuestCacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestCacheHelper.swift; sourceTree = "<group>"; };
+		43EAE9451F09767000F41B64 /* GuestCache+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GuestCache+CoreDataClass.swift"; sourceTree = "<group>"; };
+		43EAE9461F09767000F41B64 /* GuestCache+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GuestCache+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		43FE4E691EE1CF2700D13D0E /* ProdutoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdutoDetailViewController.swift; sourceTree = "<group>"; };
 		43FE4E6B1EE1DDF000D13D0E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		43FE4E6D1EE1E66A00D13D0E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -249,10 +255,11 @@
 			isa = PBXGroup;
 			children = (
 				0B6E17091EFF06A900CFE9F0 /* AddressCacheHelper.swift */,
-				0BE8233A1EF839E000EE35A3 /* CartHelper.swift */,
-				436C5B0E1EE8742B001FF067 /* String+Extensions.swift */,
 				F2DB48A71EF8549300A7459A /* CartButtonBadge+Extensions.swift */,
+				0BE8233A1EF839E000EE35A3 /* CartHelper.swift */,
+				43EAE9431F09493D00F41B64 /* GuestCacheHelper.swift */,
 				0B7598471EF97C6A004C5E52 /* RoundedHelper.swift */,
+				436C5B0E1EE8742B001FF067 /* String+Extensions.swift */,
 			);
 			name = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -337,6 +344,8 @@
 		437912ED1EE72CAF0019B82E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				43EAE9451F09767000F41B64 /* GuestCache+CoreDataClass.swift */,
+				43EAE9461F09767000F41B64 /* GuestCache+CoreDataProperties.swift */,
 				436C5B0B1EE87244001FF067 /* ApiError.swift */,
 				437912EE1EE72ED90019B82E /* Taxonomies.swift */,
 				437912F01EE7303B0019B82E /* Root.swift */,
@@ -659,10 +668,12 @@
 				0BD168E71EFB0B3D00F90A65 /* PinkTableViewCell.swift in Sources */,
 				0B77410B1F00C20C008276DC /* AddAddressViewController.swift in Sources */,
 				436399511EF1B0B800AD2F4D /* ProductProperty.swift in Sources */,
+				43EAE9441F09493D00F41B64 /* GuestCacheHelper.swift in Sources */,
 				F2DB48A81EF8549300A7459A /* CartButtonBadge+Extensions.swift in Sources */,
 				0BD168E91EFB0B4F00F90A65 /* AddressTableViewCell.swift in Sources */,
 				437912EA1EE5A7420019B82E /* CitiesTableViewController.swift in Sources */,
 				0B8DEEB61EFD706200F753F2 /* ProductViewModels.swift in Sources */,
+				43EAE9481F09767000F41B64 /* GuestCache+CoreDataProperties.swift in Sources */,
 				0B1F95361EFC4815008E6682 /* Address.swift in Sources */,
 				438DCA701ED86F7C0038BB4E /* OnMarketBR.xcdatamodeld in Sources */,
 				0B5FFE3C1EEE371F00802B98 /* OrderApiClient.swift in Sources */,
@@ -673,6 +684,7 @@
 				4364B6E91EDF06A100C3EEF6 /* CarrinhoCollectionViewCell.swift in Sources */,
 				0B77410E1F00F49F008276DC /* AddressCache+CoreDataClass.swift in Sources */,
 				0B1AAD9C1EFABA28009D7BEA /* UserApiClient.swift in Sources */,
+				43EAE9471F09767000F41B64 /* GuestCache+CoreDataClass.swift in Sources */,
 				0B77410F1F00F49F008276DC /* AddressCache+CoreDataProperties.swift in Sources */,
 				43930B411ED89FAF00CAA8A8 /* CategoriaCollectionViewCell.swift in Sources */,
 				0B5FFE4F1EEE777900802B98 /* CartApiClient.swift in Sources */,
@@ -839,6 +851,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 92F4M7VW6Y;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = OnMarketBR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -857,6 +870,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 92F4M7VW6Y;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = OnMarketBR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

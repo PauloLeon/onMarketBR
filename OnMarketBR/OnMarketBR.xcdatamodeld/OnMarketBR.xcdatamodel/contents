@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AddressCache" representedClassName=".AddressCache" syncable="YES">
         <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,7 +15,12 @@
         <attribute name="user_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="GuestCache" representedClassName=".GuestCache" syncable="YES">
+        <attribute name="currentOrder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="AddressCache" positionX="124" positionY="-18" width="128" height="240"/>
+        <element name="GuestCache" positionX="279" positionY="-15" width="128" height="73"/>
     </elements>
 </model>

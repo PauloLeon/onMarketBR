@@ -144,14 +144,29 @@ class RightCollectionViewController: UICollectionViewController {
     }
     
     func fetchOrders(){
-        OrderApiClient.current({ currentOrder in
-            self.currentOrder = currentOrder
-            self.isLoading = false
-            SVProgressHUD.dismiss()
-            self.collectionView?.reloadData()
-        }, failure: { apiError in
-            self.showApiErrorAlert(apiError)
-        })
+        let guestCache = GuestCacheHelper()
+        guestCache.fetch()
+        let exist = !guestCache.exists(guestCacheHelper: guestCache)
+        if User.isLoggedIn || !Guest.exists ||  exist{
+            OrderApiClient.current({ currentOrder in
+                self.currentOrder = currentOrder
+                self.isLoading = false
+                SVProgressHUD.dismiss()
+                self.collectionView?.reloadData()
+            }, failure: { apiError in
+                self.showApiErrorAlert(apiError)
+            })
+        }else{
+            OrderApiClient.guestCart((Guest.currentGuest?.order)!,
+                                     success: {currentOrder in
+                                        self.currentOrder = currentOrder
+                                        self.isLoading = false
+                                        SVProgressHUD.dismiss()
+                                        self.collectionView?.reloadData()},
+                                     failure: { apiError in
+                                        print(apiError) })
+        }
+        
     }
     
     func showApiErrorAlert(_ apiError: ApiError) {

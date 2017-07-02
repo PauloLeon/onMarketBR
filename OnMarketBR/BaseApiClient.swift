@@ -35,6 +35,7 @@ extension BaseApiClient {
         case createOrder(data: URLRequestParams)
 
         case cart
+        case cartGuest(order_id: String)
         case addItem(order_id: String, data: URLRequestParams)
         case updateItem(order_id: String, item_id: Int, data: URLRequestParams)
         case removeItem(order_id: String, item_id: Int)
@@ -66,6 +67,7 @@ extension BaseApiClient {
                 case .forgotPassword(_):                                       return "/password/reset"
                 case .orders:                                                return "/orders"
                 case .cart:                                                  return "/orders/current"
+                case .cartGuest(let id):                                   return "/orders/\(id)"
                 case .updateOrder(let id, _):                                   return "/orders/\(id)"
                 case .addItem(let order_id, _):                                return "/orders/\(order_id)/line_items"
                 case .updateItem(let order_id, let item_id, _):                  return "/orders/\(order_id)/line_items/\(item_id)"
@@ -100,14 +102,13 @@ extension BaseApiClient {
                     params!["token"] = token
                 }
             }else if Guest.exists{
-                //let token = Guest.currentGuest!.tokenGuest!
-                let token = "2b278662dd5776d0cc0df50f6c9303af30140c3db365889f"
+                let token = Guest.currentGuest!.tokenGuest!
                 //migue
                 if !(path == "/taxonomies" || path == "/products") {
                     if params == nil {
-                        params = ["token" : token]
+                        params = ["guest_token" : token]
                     } else {
-                        params!["token"] = token
+                        params!["guest_token"] = token
                     }
                 }
             }

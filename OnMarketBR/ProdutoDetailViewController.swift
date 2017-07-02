@@ -37,9 +37,12 @@ class ProdutoDetailViewController: UIViewController {
     
     func settingUI(){
         if let produto = productViewModel{
-            productImage = produto.productImage
+            let imageName = "toddy"
+            if let image = UIImage(named: imageName){
+                self.productImage.sd_setImage(with: URL(string:produto.productImage), placeholderImage: image)
+            }
             productName.text = produto.productName
-            productPrice.text = "Unidade - \(produto.productPrice)"
+            productPrice.text = "Unidade - \(produto.productPrice ?? "optional")"
             productQuantity.text = produto.getQuantidadeForView()
             productTotal.text = produto.productPrice
         }

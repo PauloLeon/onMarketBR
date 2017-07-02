@@ -17,12 +17,24 @@ class CartHelper: NSObject {
     }
     
     func fetchCurrentOrder(){
-        OrderApiClient.current({ currentOrder in
-            Order.currentOrder = currentOrder
-            print("getOrderOK")
-        }, failure: { apiError in
-            print(apiError)
-        })
+        let guestCache = GuestCacheHelper()
+        guestCache.fetch()
+        let exist = !guestCache.exists(guestCacheHelper: guestCache)
+        if User.isLoggedIn || !Guest.exists ||  exist{
+            OrderApiClient.current({ currentOrder in
+                Order.currentOrder = currentOrder
+                print("getOrderOK")
+            }, failure: { apiError in
+                print(apiError)
+            })
+        }else{
+            OrderApiClient.guestCart((Guest.currentGuest?.order)!,
+                        success: {currentOrder in
+                                  Order.currentOrder = currentOrder
+                                  print("getOrderOK")},
+                        failure: { apiError in
+                                print(apiError) })
+        }
     }
 
     func addingProduct(button: UIButton, products: [Product], viewforAlert: UIViewController){
