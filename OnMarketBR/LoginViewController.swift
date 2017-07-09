@@ -25,20 +25,20 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         super.viewDidLoad()
         RoundedHelper.roundButtons(button: signInButton)
         RoundedHelper.roundButtons(button: signUpButton)
-        
-        let animationView = LOTAnimationView(name: "PinJump")
-        animationView?.frame = CGRect(x: 90, y: 10, width: 200, height: 200)
-        animationView?.contentMode = .scaleAspectFill
-        animationView?.loopAnimation = true
-        
-        self.view.addSubview(animationView!)
-        
-        animationView?.play()
+        loadAnimation()
     }
     
     @IBAction func signIn(_ sender: Any) {
         view.endEditing(true)
+        if let email = email.text{
+            if let senha = senha.text{
+                if (email != "" || senha != "") {
+                    sendToAPI(email: prepareString(string: email).lowercased(), senha: prepareString(string: senha))
+                }
+            }
+        }
     }
+    
     @IBAction func close(_ sender: Any) {
         view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
@@ -52,6 +52,33 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         }
     }
     
+    func sendToAPI(email: String, senha: String){
+        var data = URLRequestParams()
+        data["email"] = email
+        data["password"] = senha
+        UserApiClient.signin(data,
+                             success: {
+                                user in print("sucesso") },
+                             failure: { apiError in
+                                        AlertControllerHelper.showApiErrorAlert("Erro", message: apiError.errorMessage(), view: self, handler: nil) })
+    }
+    
+    func prepareString(string: String) -> String{
+       let returnString =  string.trimmingCharacters(in: .whitespacesAndNewlines)
+       return returnString
+    }
+    
+    // MARK: Animation
+    
+    func loadAnimation(){
+        let animationView = LOTAnimationView(name: "PinJump")
+        animationView.frame = CGRect(x: 90, y: 10, width: 200, height: 200)
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopAnimation = true
+        self.view.addSubview(animationView)
+        animationView.play()
+    }
+
     // MARK: UIViewControllerTransitioningDelegate
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

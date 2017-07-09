@@ -18,7 +18,8 @@ class BaseApiClient {
 extension BaseApiClient {
     enum Router: URLRequestConvertible {
         
-        static let domainName  = "http://dev.onmarketbr.com.br/"
+        //static let domainName  = "http://192.168.0.33:3000/"
+        static let domainName  = "http://dev.onmarketbr.com.br"
         
         static let apiPathName = "api/v1"
         
@@ -47,7 +48,7 @@ extension BaseApiClient {
         // MARK: - Methods
         var method: HTTPMethod {
             switch self {
-                case .login, .signup, .forgotPassword, .addItem, .createOrder:
+                case  .login, .signup, .forgotPassword, .addItem, .createOrder:
                     return .post
                 case .removeItem:
                     return .delete
@@ -62,7 +63,7 @@ extension BaseApiClient {
         var path: String {
             switch self {
                 case .home:                                                 return "/taxonomies"
-                case .login(_):                                             return "/users/sign_in"
+                case .login(_):                                             return "/signin"
                 case .signup(_):                                            return "/users"
                 case .forgotPassword(_):                                       return "/password/reset"
                 case .orders:                                                return "/orders"
@@ -104,7 +105,7 @@ extension BaseApiClient {
             }else if Guest.exists{
                 let token = Guest.currentGuest!.tokenGuest!
                 //migue
-                if !(path == "/taxonomies" || path == "/products") {
+                if !(path == "/taxonomies" || path == "/products" || path == "/signin") {
                     if params == nil {
                         params = ["guest_token" : token]
                     } else {
@@ -115,12 +116,27 @@ extension BaseApiClient {
             return params
         }
         
+        // MARK: - Paths
+        /*var hearders: String {
+            if Guest.exists{
+                let token = Guest.currentGuest!.tokenGuest!
+                if path == "/users/signin"{
+                    return token
+                }
+            }
+            return ""
+        }*/
+        
         func asURLRequest() throws -> URLRequest {
+            
+            
             let url = try Router.baseURLString.asURL()
             
             var urlRequest = URLRequest(url: url.appendingPathComponent(path))
             urlRequest.httpMethod = method.rawValue
-            
+            /*if hearders != ""{
+               // urlRequest.setValue(hearders, forHTTPHeaderField: "Guest-Token")
+            }*/
             if let parameters = parameters {
                 urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
             }

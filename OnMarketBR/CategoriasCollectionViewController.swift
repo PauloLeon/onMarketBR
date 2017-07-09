@@ -85,19 +85,8 @@ class CategoriasCollectionViewController: UICollectionViewController {
             SVProgressHUD.dismiss()
             self.collectionView?.reloadData()
         }, failure: { apiError in
-            self.showApiErrorAlert(apiError)
+            AlertControllerHelper.showApiSuccessAlert("Erro", message: apiError.errorMessage(), view: self, handler: nil)
         })
-    }
-    
-    func showApiErrorAlert(_ apiError: ApiError) {
-        showAlert("Whooops!!!", message: apiError.errorMessage(), handler: nil)
-    }
-    
-    func showAlert(_ title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: handler)
-        ac.addAction(ok)
-        present(ac, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){

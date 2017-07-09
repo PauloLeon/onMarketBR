@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B1AAD9C1EFABA28009D7BEA /* UserApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1AAD9B1EFABA28009D7BEA /* UserApiClient.swift */; };
 		0B1F95361EFC4815008E6682 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F95351EFC4815008E6682 /* Address.swift */; };
+		0B427E871F12E19A006AFEC9 /* AlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B427E861F12E19A006AFEC9 /* AlertControllerHelper.swift */; };
 		0B45AACF1F018E4E005003B9 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45AACE1F018E4E005003B9 /* DefaultTableViewCell.swift */; };
 		0B5FFE3C1EEE371F00802B98 /* OrderApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3B1EEE371F00802B98 /* OrderApiClient.swift */; };
 		0B5FFE3E1EEE37DF00802B98 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FFE3D1EEE37DF00802B98 /* Order.swift */; };
@@ -86,6 +87,7 @@
 /* Begin PBXFileReference section */
 		0B1AAD9B1EFABA28009D7BEA /* UserApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApiClient.swift; sourceTree = "<group>"; };
 		0B1F95351EFC4815008E6682 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		0B427E861F12E19A006AFEC9 /* AlertControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerHelper.swift; sourceTree = "<group>"; };
 		0B45AACE1F018E4E005003B9 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
 		0B5FFE3B1EEE371F00802B98 /* OrderApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderApiClient.swift; sourceTree = "<group>"; };
 		0B5FFE3D1EEE37DF00802B98 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				0B6E17091EFF06A900CFE9F0 /* AddressCacheHelper.swift */,
+				0B427E861F12E19A006AFEC9 /* AlertControllerHelper.swift */,
 				F2DB48A71EF8549300A7459A /* CartButtonBadge+Extensions.swift */,
 				0BE8233A1EF839E000EE35A3 /* CartHelper.swift */,
 				43EAE9431F09493D00F41B64 /* GuestCacheHelper.swift */,
@@ -536,7 +539,7 @@
 				TargetAttributes = {
 					438DCA631ED86F7B0038BB4E = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 92F4M7VW6Y;
+						DevelopmentTeam = S36KR7Z9SG;
 						ProvisioningStyle = Automatic;
 					};
 					438DCA7A1ED86F7C0038BB4E = {
@@ -699,6 +702,7 @@
 				0B5FFE401EEE427500802B98 /* LineItem.swift in Sources */,
 				0B7598481EF97C6A004C5E52 /* RoundedHelper.swift in Sources */,
 				0BD168E31EFB0A6400F90A65 /* AddressTableViewController.swift in Sources */,
+				0B427E871F12E19A006AFEC9 /* AlertControllerHelper.swift in Sources */,
 				436399551EF1B2B300AD2F4D /* ProductApiClient.swift in Sources */,
 				4363994D1EF19FD200AD2F4D /* SubCategoriaTableViewController.swift in Sources */,
 				0B5FFE3E1EEE37DF00802B98 /* Order.swift in Sources */,
@@ -850,7 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 92F4M7VW6Y;
+				DEVELOPMENT_TEAM = S36KR7Z9SG;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = OnMarketBR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -869,7 +873,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 92F4M7VW6Y;
+				DEVELOPMENT_TEAM = S36KR7Z9SG;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = OnMarketBR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -45,7 +45,7 @@ class CartHelper: NSObject {
                 Order.currentOrder = order
                 self.createProductInCart(product: product, quantidade: 1, viewforAlert: viewforAlert)
             }, failure: { apiError in
-                self.showApiErrorAlert(apiError, view: viewforAlert)
+                AlertControllerHelper.showApiErrorAlert("Erro", message: apiError.errorMessage(), view: viewforAlert, handler: nil)
             })
         } else {
             let idForVariant = fetchProductInCart(product: product)
@@ -64,7 +64,7 @@ class CartHelper: NSObject {
                 Order.currentOrder = order
                 self.createProductInCart(product: product, quantidade: quantidade, viewforAlert: viewforAlert)
             }, failure: { apiError in
-                self.showApiErrorAlert(apiError, view: viewforAlert)
+                AlertControllerHelper.showApiErrorAlert("Erro", message: apiError.errorMessage(), view: viewforAlert, handler: nil)
             })
         } else {
             let idForVariant = fetchProductInCart(product: product)
@@ -90,9 +90,9 @@ class CartHelper: NSObject {
                 CartApiClient.updateLineItem(idForRequest, lineItemID: idForVariant, data: data, success: {
                     order in
                     SVProgressHUD.dismiss()
-                    self.showSuccessAlert(view: viewforAlert)
+                    AlertControllerHelper.showApiSuccessAlert("Sucesso", message: "Produto adicionado no carrinho", view: viewforAlert, handler: nil)
                 }, failure: { apiError in
-                    self.showApiErrorAlert(apiError, view: viewforAlert)
+                    AlertControllerHelper.showApiErrorAlert("Erro", message: apiError.errorMessage(), view: viewforAlert, handler: nil)
                     SVProgressHUD.dismiss()
                 })
             }
@@ -108,9 +108,9 @@ class CartHelper: NSObject {
                 CartApiClient.addLineItem(id, data: data, success: {
                     order in
                     SVProgressHUD.dismiss()
-                    self.showSuccessAlert( view: viewforAlert)
+                    AlertControllerHelper.showApiSuccessAlert("Sucesso", message: "Produto adicionado no carrinho", view: viewforAlert, handler: nil)
                 }, failure: { apiError in
-                    self.showApiErrorAlert(apiError, view: viewforAlert)
+                    AlertControllerHelper.showApiErrorAlert("Erro", message: apiError.errorMessage(), view: viewforAlert, handler: nil)
                     SVProgressHUD.dismiss()
                 })
             }
@@ -129,19 +129,6 @@ class CartHelper: NSObject {
         }
         return -1
     }
+    
 
-    func showApiErrorAlert(_ apiError: ApiError, view: UIViewController) {
-        showAlert("Whooops!!!", message: apiError.errorMessage(), handler: nil, view: view)
-    }
-    
-    func showSuccessAlert(view: UIViewController) {
-        showAlert("Concluído", message: "Produto adicionado no carrinho", handler: nil,view: view)
-    }
-    
-    func showAlert(_ title: String, message: String, handler: ((UIAlertAction) -> Void)?, view: UIViewController) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: handler)
-        ac.addAction(ok)
-        view.present(ac, animated: true, completion: nil)
-    }
 }

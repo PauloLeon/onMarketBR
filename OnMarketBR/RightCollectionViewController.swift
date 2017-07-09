@@ -105,7 +105,8 @@ class RightCollectionViewController: UICollectionViewController {
                     order in
                     self.fetchOrders()
                 }, failure: { apiError in
-                    self.showApiErrorAlert(apiError)
+                    AlertControllerHelper.showApiSuccessAlert("Erro", message: apiError.errorMessage(), view: self, handler: nil)
+
                 })
 
             }
@@ -126,7 +127,7 @@ class RightCollectionViewController: UICollectionViewController {
                         order in
                         self.fetchOrders()
                     }, failure: { apiError in
-                        self.showApiErrorAlert(apiError)
+                        AlertControllerHelper.showApiSuccessAlert("Erro", message: apiError.errorMessage(), view: self, handler: nil)
                     })
                 }else{
                     var data = URLRequestParams()
@@ -136,7 +137,7 @@ class RightCollectionViewController: UICollectionViewController {
                         order in
                         self.fetchOrders()
                     }, failure: { apiError in
-                        self.showApiErrorAlert(apiError)
+                        AlertControllerHelper.showApiSuccessAlert("Erro", message: apiError.errorMessage(), view: self, handler: nil)
                     })
                 }
             }
@@ -154,7 +155,7 @@ class RightCollectionViewController: UICollectionViewController {
                 SVProgressHUD.dismiss()
                 self.collectionView?.reloadData()
             }, failure: { apiError in
-                self.showApiErrorAlert(apiError)
+                AlertControllerHelper.showApiSuccessAlert("Erro", message: apiError.errorMessage(), view: self, handler: nil)
             })
         }else{
             OrderApiClient.guestCart((Guest.currentGuest?.order)!,
@@ -167,16 +168,5 @@ class RightCollectionViewController: UICollectionViewController {
                                         print(apiError) })
         }
         
-    }
-    
-    func showApiErrorAlert(_ apiError: ApiError) {
-        showAlert("Whooops!!!", message: apiError.errorMessage(), handler: nil)
-    }
-    
-    func showAlert(_ title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: handler)
-        ac.addAction(ok)
-        present(ac, animated: true, completion: nil)
     }
 }
