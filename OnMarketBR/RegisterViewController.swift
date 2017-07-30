@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var close: UIButton!
@@ -24,6 +25,18 @@ class RegisterViewController: UIViewController {
         setColorPlaceholder()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.setStatusBarStyle(.default, animated: true)
+    }
+    
+    @IBAction func registerBtnClick(_ sender: Any) {
+        verifyPassword()
+    }
+    
     @IBAction func close(_ sender: Any) {
         view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
@@ -37,22 +50,55 @@ class RegisterViewController: UIViewController {
         confirmarSenha.attributedPlaceholder = NSAttributedString(string: "Confirmar Senha", attributes: [NSForegroundColorAttributeName:UIColor.white])
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
+    func sendToAPI(){
+        let data = requestData()
+        //segunda verificação se o data está correto
+        if data.count > 0 {
+            UserApiClient.signup(data,
+                                success: {json in print("sucesso") },
+                                 failure: { apiError in
+                                    AlertControllerHelper.showApiErrorAlert("Erro", message: apiError.errorMessage(), view: self, handler: nil) })
+        }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        UIApplication.shared.setStatusBarStyle(.default, animated: true)
-    }
-    
+    //popula o requestData
     func requestData() -> URLRequestParams{
         var data = URLRequestParams()
-        
-        data["user[name]"] = nome.text! as AnyObject?
-        data["user[email]"]     = email.text! as AnyObject?
-        data["user[password]"]  = senha! as AnyObject?
-        data["user[cpf]"]     = cpf.text! as AnyObject?
-        
+        if verifyParams(textField: nome) && verifyParams(textField: email) && verifyParams(textField: senha) && verifyParams(textField: cpf) {
+            data["name"] = nome
+            data["email"] = email
+            data["senha"] = senha
+            data["cpf"] = cpf
+        }
         return data
+    }
+    
+    //verifica se os parametros não estão vazios
+    func verifyParams(textField: UITextField) -> Bool{
+        guard let param =  textField.text else{
+            AlertControllerHelper.showApiErrorAlert("Ops!", message: "Por favor, preencha todos os campos", view: self, handler: nil)
+            return false
+        }
+        if !param.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
+            return true
+        }
+        AlertControllerHelper.showApiErrorAlert("Ops!", message: "Por favor, preencha todos os campos", view: self, handler: nil)
+        return false
+    }
+    
+    //verifica se a senha é maior que 6 caracteres e se foi as duas são iguais
+    func verifyPassword(){
+        guard let password1 = senha.text, let password2 = confirmarSenha.text else {
+            return
+        }
+        if password1 == password2{
+            if password1.characters.count<6 {
+                AlertControllerHelper.showApiErrorAlert("Ops!Senha está muito curta!", message: "Por favor insira mais de 6 caracteres", view: self, handler: nil)
+            }else{
+                sendToAPI()
+            }
+        }else{
+            AlertControllerHelper.showApiErrorAlert("Ops!Senhas Diferentes", message: "As senhas estão diferentes", view: self, handler: nil)
+        }
     }
 }

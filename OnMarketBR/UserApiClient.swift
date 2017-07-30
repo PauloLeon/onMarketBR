@@ -14,9 +14,9 @@ import SwiftyJSON
 class UserApiClient: BaseApiClient {
 
     static func signin(_ data: URLRequestParams, success: @escaping (User) -> Void, failure: @escaping (ApiError) -> Void ){
-            var data = URLRequestParams()
-            data["email"] = "test2@test.com"
-            data["password"] = "123456"        
+            //var data = URLRequestParams()
+            //data["email"] = "test2@test.com"
+            //data["password"] = "123456"
             Alamofire.request(Router.login(data: data))
                 .validate()
                 .responseJSON { response in

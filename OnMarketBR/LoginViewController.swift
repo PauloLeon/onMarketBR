@@ -30,18 +30,27 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     
     @IBAction func signIn(_ sender: Any) {
         view.endEditing(true)
-        if let email = email.text{
-            if let senha = senha.text{
-                if (email != "" || senha != "") {
-                    sendToAPI(email: prepareString(string: email).lowercased(), senha: prepareString(string: senha))
-                }
-            }
+        if verifyParams(textField: email) && verifyParams(textField: senha){
+            sendToAPI(email: prepareString(string: email.text!).lowercased(), senha: prepareString(string: senha.text!))
         }
     }
     
     @IBAction func close(_ sender: Any) {
         view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    //verifica se os parametros não estão vazios
+    func verifyParams(textField: UITextField) -> Bool{
+        guard let param =  textField.text else{
+            AlertControllerHelper.showApiErrorAlert("Ops!", message: "Por favor, preencha todos os campos", view: self, handler: nil)
+            return false
+        }
+        if !param.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
+            return true
+        }
+        AlertControllerHelper.showApiErrorAlert("Ops!", message: "Por favor, preencha todos os campos", view: self, handler: nil)
+        return false
     }
 
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

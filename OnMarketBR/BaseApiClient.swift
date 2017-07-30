@@ -64,7 +64,7 @@ extension BaseApiClient {
             switch self {
                 case .home:                                                 return "/taxonomies"
                 case .login(_):                                             return "/signin"
-                case .signup(_):                                            return "/users"
+                case .signup(_):                                            return "/signup"
                 case .forgotPassword(_):                                       return "/password/reset"
                 case .orders:                                                return "/orders"
                 case .cart:                                                  return "/orders/current"

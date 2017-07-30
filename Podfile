@@ -11,4 +11,5 @@ target 'OnMarketBR' do
     pod 'BubbleTransition', '~> 2.0.0'
     pod 'IQKeyboardManagerSwift'
     pod 'lottie-ios'
+    pod 'AKMaskField'
 end

@@ -29,7 +29,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifU-fz-bPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="756"/>
+            <point key="canvasLocation" x="-212" y="755"/>
         </scene>
         <!--Carrinho de Compras-->
         <scene sceneID="K0N-Qz-HQ7">
@@ -211,7 +211,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3D-J1-6YT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="755"/>
+            <point key="canvasLocation" x="502" y="754"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Sua-WN-bNS">
@@ -1117,14 +1117,18 @@
                                             <constraint firstAttribute="height" constant="1" id="QUq-yH-vtd"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7c-kH-AB6">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7c-kH-AB6" customClass="AKMaskField" customModule="AKMaskField">
                                         <rect key="frame" x="0.0" y="70" width="262" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="SKi-Hd-j2s"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maskTemplate" value="___.___.___.__"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maskExpression" value="{ddd}.{ddd}.{ddd}.{dd}"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1om-Yd-MLb">
                                         <rect key="frame" x="0.0" y="93" width="262" height="1"/>
@@ -1137,7 +1141,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4e-32-m17">
                                         <rect key="frame" x="0.0" y="141" width="262" height="1"/>
@@ -1150,7 +1154,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pl-LY-zLE">
                                         <rect key="frame" x="0.0" y="191" width="262" height="1"/>
@@ -1163,7 +1167,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhL-zQ-9Gt">
                                         <rect key="frame" x="0.0" y="242" width="262" height="1"/>
@@ -1228,6 +1232,9 @@
                                 <state key="normal" title="Cadastrar">
                                     <color key="titleColor" red="0.99607843139999996" green="0.25490196079999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerBtnClick:" destination="9jk-bS-UiI" eventType="touchUpInside" id="dUF-ZB-tIj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.25490196079999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1257,7 +1264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RsL-9f-9Gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241" y="1472"/>
+            <point key="canvasLocation" x="1241" y="1470"/>
         </scene>
         <!--Locais de Entrega-->
         <scene sceneID="CKf-cJ-U5d">
@@ -1661,7 +1668,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fn2-gj-fIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3365.5999999999999" y="754.27286356821594"/>
+            <point key="canvasLocation" x="2665" y="1471"/>
         </scene>
         <!--Buttons Example-->
         <scene sceneID="AHD-5p-Jwu">
